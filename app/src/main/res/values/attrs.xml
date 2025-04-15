@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PuzzleAreaView için özel öznitelikler -->
+    <declare-styleable name="PuzzleAreaView">
+        <attr name="gridRows" format="integer" />
+        <attr name="gridCols" format="integer" />
+        <attr name="slotStrokeWidth" format="dimension" />
+        <attr name="slotColor" format="color" />
+    </declare-styleable>
+
+    <!-- TracingView için özel öznitelikler -->
+    <declare-styleable name="TracingView">
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="paintColor" format="color" />
+    </declare-styleable>
+
+    <!-- ShapeHuntView için özel öznitelikler -->
+    <declare-styleable name="ShapeHuntView">
+        <attr name="markerStrokeWidth" format="dimension" />
+        <attr name="markerColor" format="color" />
+        <attr name="markerRadiusRatio" format="float" />
+    </declare-styleable>
+
+    <!-- Diğer özel view'larınız için tanımlar buraya eklenebilir -->
+
+</resources>

@@ -1,0 +1,22 @@
+<vector
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:alpha="0.5">
+
+    <!-- Küçük bir daire -->
+    <path
+        android:fillColor="#E03F3F"
+    android:pathData="M12,12m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0"/>
+
+    <!-- Küçük bir kare -->
+    <path
+        android:fillColor="#2730A8"
+        android:pathData="M32,32h8v8h-8z"/>
+
+    <!-- Başka küçük şekiller eklenebilir -->
+
+</vector>

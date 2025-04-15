@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/padding_large"
+    tools:context=".ui.games.discovery.ShapeDiscoveryFragment">
+
+    <!-- Geri Butonu -->
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/icon_size_medium"
+        android:layout_height="@dimen/icon_size_medium"
+        android:contentDescription="@string/back"
+        android:padding="@dimen/padding_small"
+        android:src="@drawable/ic_back"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Başlık -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shape_discovery"
+        android:textAppearance="@style/TextAppearance.ShapeLearning.Headline2"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewShape"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!-- Şekil Kartı -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewShape"
+        style="@style/Widget.ShapeLearning.CardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_v_center"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+    app:layout_constraintBottom_toTopOf="@+id/bottomNavLayout"
+    app:layout_constraintWidth_percent="0.4"
+    app:layout_constraintHeight_percent="0.4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_medium">
+
+        <ImageView
+            android:id="@+id/ivShape"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/shape_image_description"
+            app:layout_constraintBottom_toTopOf="@+id/tvShapeName"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:src="@drawable/shape_circle" />
+
+        <TextView
+            android:id="@+id/tvShapeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+        android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivShape"
+        tools:text="Daire" />
+
+        <ImageButton
+            android:id="@+id/btnAudio"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/play_shape_sound"
+            android:src="@drawable/ic_volume_up"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+    <!-- Bilgi ve Gerçek Hayat Kartları için Dikey Guideline -->
+<androidx.constraintlayout.widget.Guideline
+android:id="@+id/guideline_v_center"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+app:layout_constraintGuide_percent="0.5" />
+
+    <!-- Bilgi Kartı -->
+<androidx.cardview.widget.CardView
+android:id="@+id/cardViewInfo"
+style="@style/Widget.ShapeLearning.CardView"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginStart="@dimen/margin_medium"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toEndOf="@+id/guideline_v_center"
+app:layout_constraintTop_toTopOf="@+id/cardViewShape">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_medium">
+
+    <TextView
+        android:id="@+id/tvShapeDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Daire, kenarı olmayan yuvarlak bir şekildir." />
+
+    <TextView
+        android:id="@+id/tvShapeCorners"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShapeDescription"
+        tools:text="Köşeler: 0" />
+
+    <TextView
+        android:id="@+id/tvShapeSides"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShapeCorners"
+        tools:text="Kenarlar: 0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+    <!-- Gerçek Hayat Örneği Kartı -->
+<androidx.cardview.widget.CardView
+android:id="@+id/cardViewRealLife"
+style="@style/Widget.ShapeLearning.CardView"
+android:layout_width="0dp"
+android:layout_height="0dp"
+android:layout_marginTop="@dimen/margin_medium"
+android:layout_marginStart="@dimen/margin_medium"
+app:layout_constraintBottom_toTopOf="@+id/bottomNavLayout"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toEndOf="@+id/guideline_v_center"
+app:layout_constraintTop_toBottomOf="@+id/cardViewInfo">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_medium">
+
+    <TextView
+        android:id="@+id/tvRealLifeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/shape_real_life_examples"
+        android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+    android:id="@+id/ivRealLifeExample"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="@dimen/margin_medium"
+    android:contentDescription="@string/real_life_example_image"
+    android:scaleType="centerCrop"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvRealLifeTitle"
+    tools:src="@drawable/real_life_circle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+
+    <!-- Navigasyon Butonları -->
+    <LinearLayout
+    android:id="@+id/bottomNavLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:gravity="center"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <ImageButton
+    android:id="@+id/btnPrevious"
+    android:layout_width="@dimen/icon_size_large"
+    android:layout_height="@dimen/icon_size_large"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:contentDescription="@string/previous_shape"
+    android:padding="@dimen/padding_small"
+    android:src="@drawable/ic_previous" />
+
+    <ImageButton
+    android:id="@+id/btnRotate"
+    android:layout_width="@dimen/icon_size_large"
+    android:layout_height="@dimen/icon_size_large"
+    android:layout_marginStart="@dimen/margin_large"
+    android:layout_marginEnd="@dimen/margin_large"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:padding="@dimen/padding_small"
+    android:contentDescription="@string/rotate_shape"
+    android:src="@drawable/ic_rotate"/>
+
+    <ImageButton
+    android:id="@+id/btnNext"
+    android:layout_width="@dimen/icon_size_large"
+    android:layout_height="@dimen/icon_size_large"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:contentDescription="@string/next_shape"
+    android:padding="@dimen/padding_small"
+    android:src="@drawable/ic_next" />
+
+    </LinearLayout>
+
+    <!-- YÜKLEME GÖSTERGESİ -->
+    <ProgressBar
+    android:id="@+id/progressBar"
+    style="?android:attr/progressBarStyleLarge"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:visibility="visible"/>
+
+    <!-- İÇERİK GRUBU (ProgressBar hariç her şeyi kapsar) -->
+    <androidx.constraintlayout.widget.Group
+    android:id="@+id/contentGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    app:constraint_referenced_ids="ivBack, tvTitle, cardViewShape, cardViewInfo, cardViewRealLife, bottomNavLayout, guideline_v_center" />
+    <!-- ÖNEMLİ: Buradaki ID listesine ProgressBar HARİÇ layout'taki tüm ana bileşenlerin ve guideline'ların ID'lerini ekleyin -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

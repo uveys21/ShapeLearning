@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".ui.main.MainMenuFragment">
+
+    <!-- Arka Plan Deseni (Opsiyonel) -->
+<ImageView
+android:id="@+id/ivBackground"
+android:layout_width="0dp"
+android:layout_height="0dp"
+android:alpha="0.1"
+android:contentDescription="@null"
+android:scaleType="centerCrop"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+tools:src="@drawable/bg_shapes_pattern" />
+
+    <!-- Başlık -->
+<TextView
+android:id="@+id/tvTitle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="@dimen/margin_large"
+android:text="@string/app_name"
+android:textAppearance="@style/TextAppearance.ShapeLearning.Headline1"
+android:textColor="@color/primary"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.1"
+app:layout_constraintBottom_toTopOf="@+id/cardViewPlay"/>
+
+    <!-- Oyna Butonu -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPlay"
+        style="@style/Widget.ShapeLearning.CardView.MenuButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:minHeight="@dimen/min_touch_target_size"
+        app:cardBackgroundColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintWidth_percent="0.6">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/ivPlay"
+    style="@style/Widget.ShapeLearning.MenuButtonIcon"
+    android:contentDescription="@string/play"
+    android:src="@drawable/ic_play"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+<TextView
+    style="@style/Widget.ShapeLearning.MenuButtonText"
+    android:text="@string/play"
+    app:layout_constraintStart_toEndOf="@id/ivPlay"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Ayarlar Butonu -->
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardViewSettings"
+    style="@style/Widget.ShapeLearning.CardView.MenuButton"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/main_menu_button_height"
+    android:layout_marginTop="@dimen/margin_medium"
+    app:cardBackgroundColor="@color/accent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/cardViewPlay"
+    app:layout_constraintBottom_toTopOf="@+id/cardViewParentZone"
+    app:layout_constraintWidth_percent="0.6">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+    android:id="@+id/ivSettings"
+    style="@style/Widget.ShapeLearning.MenuButtonIcon"
+    android:contentDescription="@string/settings"
+    android:src="@drawable/ic_settings"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+    style="@style/Widget.ShapeLearning.MenuButtonText"
+    android:text="@string/settings"
+    app:layout_constraintStart_toEndOf="@id/ivSettings"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Ebeveyn Bölümü Butonu -->
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardViewParentZone"
+    style="@style/Widget.ShapeLearning.CardView.MenuButton"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/main_menu_button_height"
+    android:layout_marginTop="@dimen/margin_medium"
+    app:cardBackgroundColor="@color/dark_gray"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/cardViewSettings"
+    app:layout_constraintBottom_toTopOf="@+id/tvUserName"
+    app:layout_constraintWidth_percent="0.6">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+    android:id="@+id/ivParentZone"
+    style="@style/Widget.ShapeLearning.MenuButtonIcon"
+    android:contentDescription="@string/parent_zone"
+    android:src="@drawable/ic_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+    style="@style/Widget.ShapeLearning.MenuButtonText"
+    android:text="@string/parent_zone"
+    app:layout_constraintStart_toEndOf="@id/ivParentZone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Kullanıcı Adı -->
+    <TextView
+    android:id="@+id/tvUserName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_large"
+    android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+    android:textColor="@color/text_secondary"
+    android:visibility="invisible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    tools:text="Merhaba, Ayşe!"
+    tools:visibility="visible"/>
+
+    <!-- Yükleme Göstergesi -->
+    <ProgressBar
+    android:id="@+id/progressBar"
+    style="?android:attr/progressBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:visibility="visible"/>
+
+    <!-- İçerik Grubu -->
+<androidx.constraintlayout.widget.Group
+android:id="@+id/contentGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    app:constraint_referenced_ids="ivBackground, tvTitle, cardViewPlay, cardViewSettings, cardViewParentZone, tvUserName" />
+    <!-- ProgressBar hariç tüm ana elemanlar -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

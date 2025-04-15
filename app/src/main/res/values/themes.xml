@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ===================================================================================== -->
+    <!-- == TEMEL UYGULAMA TEMASI (Material Components 2 Tabanlı) == -->
+    <!-- ===================================================================================== -->
+
+    <style name="Theme.ShapeLearning" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Ana Renkler (colors.xml dosyasında tanımlanmalı) -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item> <!-- Genellikle beyaz veya siyah -->
+
+        <!-- İkincil Renkler (colors.xml dosyasında tanımlanmalı) -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_dark</item>
+        <item name="colorOnSecondary">@color/black</item> <!-- Genellikle beyaz veya siyah -->
+
+        <!-- Diğer Temel Renkler -->
+        <item name="android:colorBackground">@color/app_background</item> <!-- Activity arka planı (colors.xml) -->
+        <item name="colorSurface">@color/card_background</item>      <!-- CardView, Menü vb. yüzeyler (colors.xml) -->
+        <item name="colorError">@color/error_color</item>             <!-- Hata rengi (colors.xml) -->
+        <item name="colorOnBackground">@color/text_primary</item>     <!-- Arka plan üzerindeki metin -->
+        <item name="colorOnSurface">@color/text_primary</item>        <!-- Yüzeyler üzerindeki metin -->
+        <item name="colorOnError">@color/white</item>                 <!-- Hata rengi üzerindeki metin -->
+
+        <!-- Durum Çubuğu Rengi -->
+        <item name="android:statusBarColor">@color/primary_dark</item>
+
+        <!-- Varsayılan Widget Stilleri -->
+        <item name="materialCardViewStyle">@style/Widget.ShapeLearning.CardView</item>
+        <item name="materialButtonStyle">@style/Widget.ShapeLearning.Button</item>
+        <!-- Diğer widget stilleri buraya eklenebilir (örn: textInputStyle) -->
+
+        <!-- Varsayılan Metin Görünümleri (İsteğe bağlı - genellikle layout'ta belirtilir) -->
+        <!-- <item name="android:textAppearance">@style/TextAppearance.ShapeLearning.Body1</item> -->
+
+    </style>
+
+    <!-- ===================================================================================== -->
+    <!-- == SPLASH EKRANI TEMASI == -->
+    <!-- ===================================================================================== -->
+
+    <style name="Theme.ShapeLearning.Splash" parent="Theme.SplashScreen">
+        <!-- Arka Plan Rengi (colors.xml'den) -->
+        <item name="windowSplashScreenBackground">@color/primary</item>
+        <!-- Gösterilecek İkon (drawable veya mipmap) -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item> <!-- Veya @mipmap/ic_launcher -->
+        <!-- İkon Animasyon Süresi (Opsiyonel) -->
+        <!-- <item name="windowSplashScreenAnimationDuration">1000</item> -->
+        <!-- Splash Sonrası Kullanılacak Ana Tema -->
+        <item name="postSplashScreenTheme">@style/Theme.ShapeLearning</item>
+        <!-- Android 12 Öncesi için Geriye Dönük Uyumluluk -->
+        <item name="android:windowBackground">@color/primary</item>
+    </style>
+
+
+    <!-- ===================================================================================== -->
+    <!-- == METİN GÖRÜNÜM STİLLERİ (TextAppearance - Material Components 2 ile Uyumlu) == -->
+    <!-- ===================================================================================== -->
+
+    <!-- Temel Metin Görünümü (M2 Body1'den türetildi) -->
+    <style name="TextAppearance.ShapeLearning" parent="TextAppearance.MaterialComponents.Body1"/>
+
+    <!-- Başlık (Headline) Stilleri -->
+    <style name="TextAppearance.ShapeLearning.Headline1" parent="TextAppearance.MaterialComponents.Headline1"/>
+    <style name="TextAppearance.ShapeLearning.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textColor">@color/primary</item> <!-- Özel renk -->
+    </style>
+    <style name="TextAppearance.ShapeLearning.Headline3" parent="TextAppearance.MaterialComponents.Headline3"/>
+    <style name="TextAppearance.ShapeLearning.Headline4" parent="TextAppearance.MaterialComponents.Headline4"/>
+    <style name="TextAppearance.ShapeLearning.Headline5" parent="TextAppearance.MaterialComponents.Headline5"/>
+    <style name="TextAppearance.ShapeLearning.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">@dimen/text_size_headline6</item> <!-- Özel boyut (dimens.xml) -->
+        <item name="android:textColor">@color/text_primary</item> <!-- Özel renk (colors.xml) -->
+    </style>
+
+    <!-- Alt Başlık (Subtitle) Stilleri -->
+    <style name="TextAppearance.ShapeLearning.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1"/>
+    <style name="TextAppearance.ShapeLearning.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2"/>
+
+    <!-- Gövde Metni (Body) Stilleri -->
+    <style name="TextAppearance.ShapeLearning.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">@dimen/text_size_body1</item> <!-- Özel boyut (dimens.xml) -->
+        <item name="android:textColor">@color/text_primary</item> <!-- Özel renk (colors.xml) -->
+        <item name="lineHeight">@dimen/text_body_line_height</item> <!-- Satır yüksekliği (dimens.xml) -->
+    </style>
+    <style name="TextAppearance.ShapeLearning.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">@dimen/text_size_body2</item> <!-- Özel boyut (dimens.xml) -->
+        <item name="android:textColor">@color/text_secondary</item> <!-- Özel renk (colors.xml) -->
+        <item name="lineHeight">@dimen/text_body_line_height_small</item> <!-- Satır yüksekliği (dimens.xml) -->
+    </style>
+
+    <!-- Buton Metni Stili -->
+    <style name="TextAppearance.ShapeLearning.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_button</item> <!-- Özel boyut (dimens.xml) -->
+        <item name="android:textAllCaps">false</item> <!-- Buton metni küçük harf olabilir -->
+        <item name="android:letterSpacing">0.02</item> <!-- Harf aralığı -->
+        <item name="android:textStyle">bold</item> <!-- Kalın metin -->
+    </style>
+
+    <!-- İkincil/Küçük Yazı (Caption) Stili -->
+    <style name="TextAppearance.ShapeLearning.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">@dimen/text_size_caption</item> <!-- Özel boyut (dimens.xml) -->
+        <item name="android:textColor">@color/text_secondary</item> <!-- Özel renk (colors.xml) -->
+    </style>
+
+    <!-- Daha Küçük, Tamamı Büyük Harf (Overline) Stili -->
+    <style name="TextAppearance.ShapeLearning.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="android:textSize">@dimen/text_size_overline</item> <!-- Özel boyut (dimens.xml) -->
+        <item name="android:textAllCaps">true</item> <!-- Tamamı büyük harf -->
+        <item name="android:letterSpacing">0.08</item> <!-- Harf aralığı -->
+        <item name="android:textColor">@color/text_secondary</item> <!-- Özel renk (colors.xml) -->
+    </style>
+
+
+    <!-- ===================================================================================== -->
+    <!-- == WIDGET STİLLERİ == -->
+    <!-- ===================================================================================== -->
+
+    <!-- Genel CardView Stili -->
+    <style name="Widget.ShapeLearning.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/card_elevation_medium</item> <!-- Gölge (dimens.xml) -->
+        <item name="cardBackgroundColor">@color/card_background</item> <!-- Arka plan (colors.xml) -->
+        <!-- Gerekirse köşe yuvarlaklığı vb. eklenebilir: <item name="cardCornerRadius">@dimen/card_corner_radius</item> -->
+    </style>
+
+    <!-- Genel Buton Stili -->
+    <style name="Widget.ShapeLearning.Button" parent="Widget.MaterialComponents.Button">
+        <!-- Metin görünümü yukarıda tanımlanan stil -->
+        <item name="android:textAppearance">@style/TextAppearance.ShapeLearning.Button</item>
+        <!-- İç boşluklar (dimens.xml) -->
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="android:paddingStart">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/button_padding_horizontal</item>
+        <!-- Butonun kendi iç gölgelerini/boşluklarını sıfırlar (Material önerisi) -->
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <!-- Gerekirse köşe yuvarlaklığı: <item name="cornerRadius">@dimen/button_corner_radius</item> -->
+    </style>
+
+    <!-- Ana/Birincil Buton Stili (Dolgulu) -->
+    <style name="Widget.ShapeLearning.Button.Primary" parent="Widget.ShapeLearning.Button">
+        <item name="android:backgroundTint">@color/primary</item> <!-- Arka plan rengi (colors.xml) -->
+        <item name="android:textColor">@color/white</item> <!-- Metin rengi (genellikle colorOnPrimary) -->
+        <item name="iconTint">@color/white</item> <!-- İkon rengi (varsa) -->
+    </style>
+
+    <!-- Çizgili/İkincil Buton Stili -->
+    <style name="Widget.ShapeLearning.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/TextAppearance.ShapeLearning.Button</item>
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="android:paddingStart">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/button_padding_horizontal</item>
+        <item name="strokeColor">@color/primary</item> <!-- Kenarlık rengi (colors.xml) -->
+        <item name="android:textColor">@color/primary</item> <!-- Metin rengi -->
+        <item name="iconTint">@color/primary</item> <!-- İkon rengi (varsa) -->
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- Metin Buton Stili (Arka plansız) -->
+    <style name="Widget.ShapeLearning.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAppearance">@style/TextAppearance.ShapeLearning.Button</item>
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="android:paddingStart">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/button_padding_horizontal</item>
+        <item name="android:textColor">@color/primary</item> <!-- Metin rengi -->
+        <item name="iconTint">@color/primary</item> <!-- İkon rengi (varsa) -->
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- ===================================================================================== -->
+    <!-- == ÖZEL MENÜ VB. STİLLER (Basitleştirilmiş / Kaldırılmış) == -->
+    <!-- ===================================================================================== -->
+
+    <!-- ÖNERİ: Aşağıdaki "MenuButton" ile ilgili stiller yerine,
+         layout XML dosyalarınızda doğrudanTextAppearance, CardView stili ve
+         gravity, clickable gibi öznitelikleri kullanın. -->
+
+    <!-- Ana Menü Butonlarının Metin Stili (Eğer tümü beyaz olacaksa) -->
+    <style name="TextAppearance.ShapeLearning.MenuButton" parent="TextAppearance.ShapeLearning.Button">
+        <item name="android:textColor">@color/white</item>
+        <!-- Gravity gibi layout özellikleri BURADA OLMAMALI -->
+    </style>
+
+    <!-- Widget.ShapeLearning.CardView.MenuButton stilini kullanmak yerine temel CardView stilini kullanıp
+         layout'ta elevation, foreground gibi özellikleri ayarlayın. -->
+
+    <!-- Widget.ShapeLearning.MenuButtonIcon stilini kullanmak yerine ImageView'a doğrudan
+         tint uygulayın (layout XML'inde app:tint="@color/white" gibi). -->
+
+    <!-- themes.xml içine geri eklenebilir -->
+    <style name="Widget.ShapeLearning.CardView.MenuButton" parent="Widget.ShapeLearning.CardView">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="cardElevation">@dimen/card_elevation_large</item>
+    </style>
+
+    <style name="Widget.ShapeLearning.MenuButtonIcon">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="Widget.ShapeLearning.MenuButtonText" parent="TextAppearance.ShapeLearning.Button">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.ShapeLearning" parent="android:Widget">
+        <!-- Bu stilin içeriği muhtemelen boş olabilir veya
+             temel bir özellik içerebilir, ancak modern temalarla
+             genellikle gereksizdir. -->
+    </style>
+
+</resources>

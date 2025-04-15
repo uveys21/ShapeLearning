@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.shapelearning.ui.main.MainMenuFragment"
+        android:label="Ana Menü"
+        tools:layout="@layout/fragment_main_menu">
+        <action
+            android:id="@+id/action_mainMenuFragment_to_gameModeSelectionFragment"
+            app:destination="@id/gameModeSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_parentPinFragment"
+            app:destination="@id/parentPinFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameModeSelectionFragment"
+        android:name="com.example.shapelearning.ui.games.GameModeSelectionFragment"
+        android:label="Oyun Modu Seçimi"
+        tools:layout="@layout/fragment_game_mode_selection">
+        <action
+            android:id="@+id/action_gameModeSelectionFragment_to_levelSelectionFragment"
+            app:destination="@id/levelSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/levelSelectionFragment"
+        android:name="com.example.shapelearning.ui.games.LevelSelectionFragment"
+        android:label="Seviye Seçimi"
+        tools:layout="@layout/fragment_level_selection">
+        <argument
+            android:name="gameModeId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_levelSelectionFragment_to_shapeDiscoveryFragment"
+            app:destination="@id/shapeDiscoveryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_levelSelectionFragment_to_shapeTracingFragment"
+            app:destination="@id/shapeTracingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_levelSelectionFragment_to_shapeMatchingFragment"
+            app:destination="@id/shapeMatchingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_levelSelectionFragment_to_shapeSortingFragment"
+            app:destination="@id/shapeSortingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_levelSelectionFragment_to_shapePuzzleFragment"
+            app:destination="@id/shapePuzzleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_levelSelectionFragment_to_shapeHuntFragment"
+            app:destination="@id/shapeHuntFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shapeDiscoveryFragment"
+        android:name="com.example.shapelearning.ui.games.discovery.ShapeDiscoveryFragment"
+        android:label="Şekil Keşfi"
+        tools:layout="@layout/fragment_shape_discovery">
+        <argument
+            android:name="levelId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shapeTracingFragment"
+        android:name="com.example.shapelearning.ui.games.tracing.ShapeTracingFragment"
+        android:label="Şekil İzleme"
+        tools:layout="@layout/fragment_shape_tracing">
+        <argument
+            android:name="levelId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shapeMatchingFragment"
+        android:name="com.example.shapelearning.ui.games.matching.ShapeMatchingFragment"
+        android:label="Şekil Eşleştirme"
+        tools:layout="@layout/fragment_shape_matching">
+        <argument
+            android:name="levelId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shapeSortingFragment"
+        android:name="com.example.shapelearning.ui.games.sorting.ShapeSortingFragment"
+        android:label="Şekil Sıralama"
+        tools:layout="@layout/fragment_shape_sorting">
+        <argument
+            android:name="levelId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shapePuzzleFragment"
+        android:name="com.example.shapelearning.ui.games.puzzle.ShapePuzzleFragment"
+        android:label="Şekil Yapboz"
+        tools:layout="@layout/fragment_shape_puzzle">
+        <argument
+            android:name="levelId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shapeHuntFragment"
+        android:name="com.example.shapelearning.ui.games.hunt.ShapeHuntFragment"
+        android:label="Şekil Avı"
+        tools:layout="@layout/fragment_shape_hunt">
+        <argument
+            android:name="levelId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.shapelearning.ui.settings.SettingsFragment"
+        android:label="Ayarlar"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/parentPinFragment"
+        android:name="com.example.shapelearning.ui.parent.ParentPinFragment"
+        android:label="Ebeveyn Bölümü"
+        tools:layout="@layout/fragment_parent_pin">
+        <action
+            android:id="@+id/action_parentPinFragment_to_parentZoneFragment"
+            app:destination="@id/parentZoneFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/parentZoneFragment"
+        android:name="com.example.shapelearning.ui.parent.ParentZoneFragment"
+        android:label="Ebeveyn Bölümü"
+        tools:layout="@layout/fragment_parent_zone" />
+
+</navigation>

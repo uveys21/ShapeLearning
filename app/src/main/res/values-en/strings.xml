@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shape Learning</string>
+
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="check">Check</string>
+    <string name="clear">Clear</string>
+    <string name="success">Successful!</string>
+    <string name="failure">Try Again!</string>
+    <string name="level_complete">Level Complete!</string>
+    <string name="continue_text">Continue</string>
+    <string name="exit">Exit</string>
+    <string name="loading">Loading...</string>
+    <string name="loading_level">Loading Level...</string>
+    <string name="error_generic">An error occurred.</string>
+    <string name="score">Score: %1$d</string>
+    <string name="sortable_shape_desc">Sortable shape ID %1$d</string>
+    <string name="hunt_scene_description">Shape hunt scene</string>
+
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_replay">Replay</string>
+    <string name="dialog_next_level">Next Level</string>
+
+    <string name="hello_user">Hello, %1$s!</string>
+    <string name="hello_guest">Hello Guest!</string>
+    <string name="play">Play</string>
+    <string name="settings">Settings</string>
+    <string name="parent_zone">Parent Zone</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="sound">Sound Effects</string>
+    <string name="music">Music</string>
+    <string name="language">Language</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_medium">Medium</string>
+    <string name="difficulty_hard">Hard</string>
+    <string name="settings_saved">Settings saved.</string>
+    <string name="settings_save_error">Failed to save settings.</string>
+
+    <string name="language_turkish">Turkish</string>
+    <string name="language_english">English</string>
+    <string name="language_german">German</string>
+    <string name="language_french">French</string>
+    <string name="language_spanish">Spanish</string>
+    <string name="language_arabic">Arabic</string>
+    <string name="language_russian">Russian</string>
+
+    <string name="game_modes">Game Modes</string>
+    <string name="game_mode_discovery_title">Discovery</string>
+    <string name="game_mode_discovery_description">Recognize shapes and learn their properties.</string>
+    <string name="game_mode_tracing_title">Tracing</string>
+    <string name="game_mode_tracing_description">Improve your dexterity by tracing over shapes.</string>
+    <string name="game_mode_matching_title">Matching</string>
+    <string name="game_mode_matching_description">Find and match identical shapes.</string>
+    <string name="game_mode_sorting_title">Sorting</string>
+    <string name="game_mode_sorting_description">Sort shapes by their color or type.</string>
+    <string name="game_mode_puzzle_title">Puzzle</string>
+    <string name="game_mode_puzzle_description">Complete the puzzle by placing the shapes in their correct spots.</string>
+    <string name="game_mode_hunt_title">Shape Hunt</string>
+    <string name="game_mode_hunt_description">Find the hidden shapes in the picture.</string>
+
+    <string name="levels">Levels</string>
+    <string name="level">Level %1$d</string>
+    <string name="locked">Locked</string>
+    <string name="level_locked">Level Locked</string>
+
+    <string name="shape_discovery">Shape Discovery</string>
+    <string name="shape_image_description">Shape image</string>
+    <string name="play_shape_sound">Play shape sound</string>
+    <string name="shape_corners">Corners: %1$d</string>
+    <string name="shape_sides">Sides: %1$d</string>
+    <string name="shape_real_life_examples">Real Life Examples</string>
+    <string name="real_life_example_image">Real life example image</string>
+    <string name="rotate_shape">Rotate Shape</string>
+    <string name="previous_shape">Previous Shape</string>
+    <string name="next_shape">Next Shape</string>
+
+    <string name="shape_tracing">Shape Tracing</string>
+    <string name="trace_shape">Trace Shape</string>
+    <string name="trace_again">Trace Again</string>
+    <string name="tracing_too_short">Please trace over the shape!</string>
+    <string name="tracing_success_feedback">Successful! Accuracy: %1$d%%</string>
+    <string name="tracing_failure_feedback">Try Again! Accuracy: %1$d%%</string>
+
+    <string name="shape_matching">Shape Matching</string>
+    <string name="match_shapes">Match Shapes</string>
+    <string name="pairs_found">Pairs Found: %1$d/%2$d</string>
+    <string name="card_description_hidden">Hidden card</string>
+    <string name="card_description_prefix">Card shape ID</string>
+    <string name="level_complete_title">Congratulations!</string>
+    <string name="level_complete_message">Level complete! Your score: %1$d</string>
+
+    <string name="shape_sorting">Shape Sorting</string>
+    <string name="sort_by_criteria">Sort shapes by: %1$s</string>
+    <string name="sort_by_color">Color</string>
+    <string name="sort_by_shape_type">Shape Type</string>
+    <string name="sort_by_corners">Number of Corners</string>
+    <string name="category_color_1">Category 1 (%1$s)</string>
+    <string name="category_color_2">Category 2 (%1$s)</string>
+    <string name="category_shape_1">Angular Shapes</string>
+    <string name="category_shape_2">Round Shapes</string>
+    <string name="category_corners_1">Category 1 (%1$s)</string>
+    <string name="category_corners_2">Category 2 (%1$s)</string>
+    <string name="check_sorting">Check</string>
+    <string name="sorting_incomplete_message">Please place all shapes into categories.</string>
+    <string name="sorting_success">You sorted correctly!</string>
+    <string name="sorting_failure">Wrong! Try again.</string>
+
+    <string name="shape_puzzle">Shape Puzzle</string>
+    <string name="complete_puzzle">Complete Puzzle</string>
+    <string name="check_puzzle">Check</string>
+    <string name="puzzle_incomplete">Please place all pieces.</string>
+    <string name="puzzle_success">Puzzle completed!</string>
+    <string name="puzzle_failure">Some pieces are in the wrong place.</string>
+    <string name="level_complete_message_puzzle">Puzzle completed!</string>
+    <string name="puzzle_shape_available_desc">Available puzzle piece ID %1$d</string>
+    <string name="puzzle_shape_placed_desc">Placed puzzle piece ID %1$d</string>
+    <string name="puzzle_shape_selected_desc">Selected puzzle piece ID %1$d</string>
+
+    <string name="shape_hunt">Shape Hunt</string>
+    <string name="find_all_shapes">Find all %1$s shapes!</string>
+    <string name="found_shapes">Found: %1$d/%2$d</string>
+    <string name="level_complete_message_hunt">You found them all!</string>
+    <string name="hunt_already_found">You already found this one!</string>
+
+    <string name="enter_pin">Enter PIN Code</string>
+    <string name="pin_incorrect">Incorrect PIN Code</string>
+    <string name="progress_report">Progress Report</string>
+    <string name="reset_progress">Reset Progress</string>
+    <string name="change_pin">Change PIN Code</string>
+    <string name="confirm_reset_progress_title">Reset Progress?</string>
+    <string name="confirm_reset_progress_message">All user progress will be deleted. Are you sure?</string>
+
+    <string name="shape_circle">Circle</string>
+    <string name="shape_square">Square</string>
+    <string name="shape_triangle">Triangle</string>
+    <string name="shape_rectangle">Rectangle</string>
+    <string name="shape_oval">Oval</string>
+    <string name="shape_star">Star</string>
+    <string name="shape_heart">Heart</string>
+    <string name="shape_hexagon">Hexagon</string>
+    <string name="shape_outline_for_tracing">Shape outline for tracing</string>
+    <string name="shapes_to_sort_list">List of shapes to sort</string>
+    <string name="category_1_shapes_list">Category 1 shapes list</string>
+    <string name="category_2_shapes_list">Category 2 shapes list</string>
+    <string name="cd_game_mode_list">Game modes list</string>
+    <string name="parent_zone_title">Parent Zone</string>
+
+    <string name="cd_level_icon">Level icon</string>
+    <string name="cd_level_status">Level status</string>
+    <string name="cd_background_image">Background image</string>
+    <string name="cd_puzzle_background">Puzzle background</string>
+    <string name="level_1">Level 1</string>
+    <string name="level_2">Level 2</string>
+    <string name="level_3">Level 3</string>
+
+
+
+</resources>

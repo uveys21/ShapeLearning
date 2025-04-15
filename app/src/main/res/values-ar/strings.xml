@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">أتعلم الأشكال</string>
+
+    <string name="back">رجوع</string>
+    <string name="next">التالي</string>
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="check">تحقق</string>
+    <string name="clear">مسح</string>
+    <string name="success">ناجح!</string>
+    <string name="failure">حاول مرة أخرى!</string>
+    <string name="level_complete">اكتمل المستوى!</string>
+    <string name="continue_text">متابعة</string>
+    <string name="exit">خروج</string>
+    <string name="loading">جارٍ التحميل...</string>
+    <string name="loading_level">جارٍ تحميل المستوى...</string>
+    <string name="error_generic">حدث خطأ.</string>
+    <string name="score">النقاط: %1$d</string>
+    <string name="sortable_shape_desc">معرف الشكل القابل للفرز %1$d</string>
+    <string name="hunt_scene_description">مشهد البحث عن الأشكال</string>
+
+    <string name="dialog_ok">موافق</string>
+    <string name="dialog_cancel">إلغاء</string>
+    <string name="dialog_yes">نعم</string>
+    <string name="dialog_no">لا</string>
+    <string name="dialog_replay">إعادة اللعب</string>
+    <string name="dialog_next_level">المستوى التالي</string>
+
+    <string name="hello_user">مرحباً، %1$s!</string>
+    <string name="hello_guest">مرحباً بالضيف!</string>
+    <string name="play">العب</string>
+    <string name="settings">الإعدادات</string>
+    <string name="parent_zone">منطقة الوالدين</string>
+
+    <string name="settings_title">الإعدادات</string>
+    <string name="sound">مؤثرات صوتية</string>
+    <string name="music">موسيقى</string>
+    <string name="language">اللغة</string>
+    <string name="difficulty">الصعوبة</string>
+    <string name="difficulty_easy">سهل</string>
+    <string name="difficulty_medium">متوسط</string>
+    <string name="difficulty_hard">صعب</string>
+    <string name="settings_saved">تم حفظ الإعدادات.</string>
+    <string name="settings_save_error">فشل حفظ الإعدادات.</string>
+
+    <string name="language_turkish">التركية</string>
+    <string name="language_english">الإنجليزية</string>
+    <string name="language_german">الألمانية</string>
+    <string name="language_french">الفرنسية</string>
+    <string name="language_spanish">الإسبانية</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_russian">الروسية</string>
+
+    <string name="game_modes">أوضاع اللعب</string>
+    <string name="game_mode_discovery_title">اكتشف</string>
+    <string name="game_mode_discovery_description">تعرف على الأشكال وتعلم خصائصها.</string>
+    <string name="game_mode_tracing_title">تتبع</string>
+    <string name="game_mode_tracing_description">طور مهاراتك اليدوية عن طريق التتبع فوق الأشكال.</string>
+    <string name="game_mode_matching_title">مطابقة</string>
+    <string name="game_mode_matching_description">ابحث عن الأشكال المتطابقة وطابقها.</string>
+    <string name="game_mode_sorting_title">فرز</string>
+    <string name="game_mode_sorting_description">فرز الأشكال حسب لونها أو نوعها.</string>
+    <string name="game_mode_puzzle_title">أحجية</string>
+    <string name="game_mode_puzzle_description">أكمل الأحجية عن طريق وضع الأشكال في أماكنها الصحيحة.</string>
+    <string name="game_mode_hunt_title">البحث عن الأشكال</string>
+    <string name="game_mode_hunt_description">ابحث عن الأشكال المخفية في الصورة.</string>
+
+    <string name="levels">المستويات</string>
+    <string name="level">المستوى %1$d</string>
+    <string name="locked">مغلق</string>
+    <string name="level_locked">المستوى مغلق</string>
+
+    <string name="shape_discovery">اكتشاف الشكل</string>
+    <string name="shape_image_description">صورة الشكل</string>
+    <string name="play_shape_sound">تشغيل صوت الشكل</string>
+    <string name="shape_corners">الزوايا: %1$d</string>
+    <string name="shape_sides">الأضلاع: %1$d</string>
+    <string name="shape_real_life_examples">أمثلة من الحياة الواقعية</string>
+    <string name="real_life_example_image">صورة مثال من الحياة الواقعية</string>
+    <string name="rotate_shape">تدوير الشكل</string>
+    <string name="previous_shape">الشكل السابق</string>
+    <string name="next_shape">الشكل التالي</string>
+
+    <string name="shape_tracing">تتبع الشكل</string>
+    <string name="trace_shape">تتبع الشكل</string>
+    <string name="trace_again">تتبع مرة أخرى</string>
+    <string name="tracing_too_short">الرجاء التتبع فوق الشكل!</string>
+    <string name="tracing_success_feedback">ناجح! الدقة: %1$d%%</string>
+    <string name="tracing_failure_feedback">حاول مرة أخرى! الدقة: %1$d%%</string>
+
+    <string name="shape_matching">مطابقة الشكل</string>
+    <string name="match_shapes">طابق الأشكال</string>
+    <string name="pairs_found">الأزواج الموجودة: %1$d/%2$d</string>
+    <string name="card_description_hidden">بطاقة مخفية</string>
+    <string name="card_description_prefix">معرف شكل البطاقة</string>
+    <string name="level_complete_title">تهانينا!</string>
+    <string name="level_complete_message">اكتمل المستوى! نقاطك: %1$d</string>
+
+    <string name="shape_sorting">فرز الشكل</string>
+    <string name="sort_by_criteria">فرز الأشكال حسب: %1$s</string>
+    <string name="sort_by_color">اللون</string>
+    <string name="sort_by_shape_type">نوع الشكل</string>
+    <string name="sort_by_corners">عدد الزوايا</string>
+    <string name="category_color_1">الفئة 1 (%1$s)</string>
+    <string name="category_color_2">الفئة 2 (%1$s)</string>
+    <string name="category_shape_1">أشكال ذات زوايا</string>
+    <string name="category_shape_2">أشكال مستديرة</string>
+    <string name="category_corners_1">الفئة 1 (%1$s)</string>
+    <string name="category_corners_2">الفئة 2 (%1$s)</string>
+    <string name="check_sorting">تحقق</string>
+    <string name="sorting_incomplete_message">الرجاء وضع جميع الأشكال في الفئات.</string>
+    <string name="sorting_success">لقد قمت بالفرز بشكل صحيح!</string>
+    <string name="sorting_failure">خطأ! حاول مرة أخرى.</string>
+
+    <string name="shape_puzzle">أحجية الشكل</string>
+    <string name="complete_puzzle">أكمل الأحجية</string>
+    <string name="check_puzzle">تحقق</string>
+    <string name="puzzle_incomplete">الرجاء وضع جميع القطع.</string>
+    <string name="puzzle_success">اكتملت الأحجية!</string>
+    <string name="puzzle_failure">بعض القطع في المكان الخطأ.</string>
+    <string name="level_complete_message_puzzle">اكتملت الأحجية!</string>
+    <string name="puzzle_shape_available_desc">معرف قطعة الأحجية المتاحة %1$d</string>
+    <string name="puzzle_shape_placed_desc">معرف قطعة الأحجية الموضوعة %1$d</string>
+    <string name="puzzle_shape_selected_desc">معرف قطعة الأحجية المحددة %1$d</string>
+
+    <string name="shape_hunt">البحث عن الشكل</string>
+    <string name="find_all_shapes">ابحث عن جميع أشكال %1$s!</string>
+    <string name="found_shapes">تم العثور على: %1$d/%2$d</string>
+    <string name="level_complete_message_hunt">لقد وجدتهم جميعًا!</string>
+    <string name="hunt_already_found">لقد وجدت هذا بالفعل!</string>
+
+    <string name="enter_pin">أدخل رمز PIN</string>
+    <string name="pin_incorrect">رمز PIN غير صحيح</string>
+    <string name="progress_report">تقرير التقدم</string>
+    <string name="reset_progress">إعادة تعيين التقدم</string>
+    <string name="change_pin">تغيير رمز PIN</string>
+    <string name="confirm_reset_progress_title">إعادة تعيين التقدم؟</string>
+    <string name="confirm_reset_progress_message">سيتم حذف جميع تقدم المستخدم. هل أنت متأكد؟</string>
+
+    <string name="shape_circle">دائرة</string>
+    <string name="shape_square">مربع</string>
+    <string name="shape_triangle">مثلث</string>
+    <string name="shape_rectangle">مستطيل</string>
+    <string name="shape_oval">بيضاوي</string>
+    <string name="shape_star">نجمة</string>
+    <string name="shape_heart">قلب</string>
+    <string name="shape_hexagon">سداسي</string>
+    <string name="shape_outline_for_tracing">مخطط الشكل للتتبع</string>
+    <string name="shapes_to_sort_list">قائمة الأشكال المراد فرزها</string>
+    <string name="category_1_shapes_list">قائمة أشكال الفئة 1</string>
+    <string name="category_2_shapes_list">قائمة أشكال الفئة 2</string>
+    <string name="cd_game_mode_list">قائمة أوضاع اللعب</string>
+    <string name="parent_zone_title">منطقة الوالدين</string>
+
+    <string name="cd_level_icon">رمز المستوى</string>
+    <string name="cd_level_status">حالة المستوى</string>
+    <string name="cd_background_image">صورة الخلفية</string>
+    <string name="cd_puzzle_background">خلفية الأحجية</string>
+    <string name="level_1">المستوى 1</string>
+    <string name="level_2">المستوى 2</string>
+    <string name="level_3">المستوى 3</string>
+
+
+</resources>

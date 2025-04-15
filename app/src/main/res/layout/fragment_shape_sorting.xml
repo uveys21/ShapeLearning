@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:padding="@dimen/padding_medium"
+    tools:context=".ui.games.sorting.ShapeSortingFragment">
+
+
+<ImageView
+android:id="@+id/ivBack"
+android:layout_width="@dimen/min_touch_target_size"
+    android:layout_height="@dimen/min_touch_target_size"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:contentDescription="@string/back"
+    android:padding="@dimen/padding_medium"
+    android:src="@drawable/ic_back"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:tint="@color/icon_tint_primary" />
+
+<TextView
+android:id="@+id/tvTitle"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginStart="@dimen/margin_small"
+android:layout_marginEnd="@dimen/margin_small"
+android:gravity="center"
+android:text="@string/shape_sorting"
+android:textAppearance="@style/TextAppearance.ShapeLearning.Headline2"
+android:textColor="@color/primary_dark"
+app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/ivBack"
+    app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+<TextView
+android:id="@+id/tvInstructions"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="@dimen/margin_medium"
+android:gravity="center"
+android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+android:textColor="@color/text_primary"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ivBack"
+tools:text="Şekilleri renklerine göre sırala" />
+
+
+<androidx.recyclerview.widget.RecyclerView
+android:id="@+id/rvShapesToSort"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="@dimen/margin_medium"
+android:clipToPadding="false"
+android:orientation="horizontal"
+android:paddingHorizontal="@dimen/padding_small"
+android:paddingVertical="@dimen/padding_small"
+app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/tvInstructions"
+tools:itemCount="6"
+tools:listitem="@layout/item_sortable_shape"
+tools:layout_height="80dp"/>
+
+
+
+<LinearLayout
+android:id="@+id/layoutCategories"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="@dimen/margin_medium"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:orientation="vertical"
+    android:baselineAligned="false"
+    app:layout_constraintBottom_toTopOf="@+id/btnCheck"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/rvShapesToSort">
+
+    <!-- Kategori 1 Alanı -->
+<androidx.cardview.widget.CardView
+android:id="@+id/cardViewCategory1"
+style="@style/Widget.ShapeLearning.CardView"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_weight="1"
+    android:layout_marginBottom="@dimen/margin_small">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:id="@+id/layoutCategory1Content"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="@dimen/padding_small">
+
+<TextView
+    android:id="@+id/tvCategory1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_small"
+    android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+    android:textColor="@color/primary_dark"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="Kırmızı Şekiller" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rvCategory1"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="@dimen/margin_small"
+    android:clipToPadding="false"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/padding_small"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvCategory1"
+    tools:itemCount="3"
+    tools:listitem="@layout/item_sortable_shape" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Kategori 2 Alanı -->
+<androidx.cardview.widget.CardView
+android:id="@+id/cardViewCategory2"
+style="@style/Widget.ShapeLearning.CardView"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_weight="1"
+    android:layout_marginTop="@dimen/margin_small">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:id="@+id/layoutCategory2Content"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="@dimen/padding_small">
+
+<TextView
+    android:id="@+id/tvCategory2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_small"
+    android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
+    android:textColor="@color/primary_dark"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="Mavi Şekiller" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rvCategory2"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="@dimen/margin_small"
+    android:clipToPadding="false"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/padding_small"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvCategory2"
+    tools:itemCount="3"
+    tools:listitem="@layout/item_sortable_shape" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+<Button
+android:id="@+id/btnCheck"
+style="@style/Widget.ShapeLearning.Button.Primary"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:text="@string/check"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!-- ProgressBar -->
+<ProgressBar
+android:id="@+id/progressBar"
+style="?android:attr/progressBarStyleLarge"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:visibility="gone"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+tools:visibility="visible"/>
+
+    <!-- contentGroup (ProgressBar hariç ana elemanları gruplar) -->
+<androidx.constraintlayout.widget.Group
+android:id="@+id/contentGroup"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:visibility="visible"
+app:constraint_referenced_ids="ivBack, tvTitle, tvInstructions, rvShapesToSort, layoutCategories, btnCheck" />
+    <!-- ID listesi kontrol edildi ve güncellendi -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

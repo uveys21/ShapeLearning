@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Apprendre les Formes</string>
+
+    <string name="back">Retour</string>
+    <string name="next">Suivant</string>
+    <string name="save">Enregistrer</string>
+    <string name="cancel">Annuler</string>
+    <string name="check">Vérifier</string>
+    <string name="clear">Effacer</string>
+    <string name="success">Réussi !</string>
+    <string name="failure">Réessayer !</string>
+    <string name="level_complete">Niveau terminé !</string>
+    <string name="continue_text">Continuer</string>
+    <string name="exit">Quitter</string>
+    <string name="loading">Chargement...</string>
+    <string name="loading_level">Chargement du niveau...</string>
+    <string name="error_generic">Une erreur est survenue.</string>
+    <string name="score">Score : %1$d</string>
+    <string name="sortable_shape_desc">ID de forme triable %1$d</string>
+    <string name="hunt_scene_description">Scène de chasse aux formes</string>
+
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Annuler</string>
+    <string name="dialog_yes">Oui</string>
+    <string name="dialog_no">Non</string>
+    <string name="dialog_replay">Rejouer</string>
+    <string name="dialog_next_level">Niveau suivant</string>
+
+    <string name="hello_user">Bonjour, %1$s !</string>
+    <string name="hello_guest">Bonjour invité !</string>
+    <string name="play">Jouer</string>
+    <string name="settings">Paramètres</string>
+    <string name="parent_zone">Zone parents</string>
+
+    <string name="settings_title">Paramètres</string>
+    <string name="sound">Effets sonores</string>
+    <string name="music">Musique</string>
+    <string name="language">Langue</string>
+    <string name="difficulty">Difficulté</string>
+    <string name="difficulty_easy">Facile</string>
+    <string name="difficulty_medium">Moyen</string>
+    <string name="difficulty_hard">Difficile</string>
+    <string name="settings_saved">Paramètres enregistrés.</string>
+    <!-- Kesme işareti düzeltildi -->
+    <string name="settings_save_error">Impossible d\'enregistrer les paramètres. </string>
+
+    <string name="language_turkish">Turc</string>
+    <string name="language_english">Anglais</string>
+    <string name="language_german">Allemand</string>
+    <string name="language_french">Français</string>
+    <string name="language_spanish">Espagnol</string>
+    <string name="language_arabic">Arabe</string>
+    <string name="language_russian">Russe</string>
+
+    <string name="game_modes">Modes de jeu</string>
+    <string name="game_mode_discovery_title">Découverte</string>
+    <string name="game_mode_discovery_description">Reconnaissez les formes et apprenez leurs propriétés.</string>
+    <string name="game_mode_tracing_title">Tracé</string>
+    <string name="game_mode_tracing_description">Améliorez votre dextérité en traçant les formes.</string>
+    <string name="game_mode_matching_title">Association</string>
+    <string name="game_mode_matching_description">Trouvez et associez les formes identiques.</string>
+    <string name="game_mode_sorting_title">Tri</string>
+    <string name="game_mode_sorting_description">Triez les formes par couleur ou par type.</string>
+    <string name="game_mode_puzzle_title">Puzzle</string>
+    <string name="game_mode_puzzle_description">Complétez le puzzle en plaçant les formes aux bons endroits.</string>
+    <string name="game_mode_hunt_title">Chasse aux formes</string>
+    <!-- Kesme işareti düzeltildi -->
+    <string name="game_mode_hunt_description">Trouvez les formes cachées dans l\'image.</string>
+
+    <string name="levels">Niveaux</string>
+    <string name="level">Niveau %1$d</string>
+    <string name="locked">Verrouillé</string>
+    <string name="level_locked">Niveau verrouillé</string>
+
+    <string name="shape_discovery">Découverte des formes</string>
+    <string name="shape_image_description">Image de la forme</string>
+    <string name="play_shape_sound">Jouer le son de la forme</string>
+    <string name="shape_corners">Coins : %1$d</string>
+    <string name="shape_sides">Côtés : %1$d</string>
+    <string name="shape_real_life_examples">Exemples de la vie réelle</string>
+    <!-- Kesme işareti düzeltildi -->
+    <string name="real_life_example_image">Image d\'exemple de la vie réelle</string>
+    <string name="rotate_shape">Faire pivoter la forme</string>
+    <string name="previous_shape">Forme précédente</string>
+    <string name="next_shape">Forme suivante</string>
+
+    <string name="shape_tracing">Tracé des formes</string>
+    <string name="trace_shape">Tracer la forme</string>
+    <string name="trace_again">Tracer à nouveau</string>
+    <string name="tracing_too_short">Veuillez tracer la forme !</string>
+    <string name="tracing_success_feedback">Réussi ! Précision : %1$d%%</string>
+    <string name="tracing_failure_feedback">Réessayez ! Précision : %1$d%%</string>
+
+    <string name="shape_matching">Association des formes</string>
+    <string name="match_shapes">Associer les formes</string>
+    <string name="pairs_found">Paires trouvées : %1$d/%2$d</string>
+    <string name="card_description_hidden">Carte cachée</string>
+    <string name="card_description_prefix">ID de la forme de la carte</string>
+    <string name="level_complete_title">Félicitations !</string>
+    <string name="level_complete_message">Niveau terminé ! Votre score : %1$d</string>
+
+    <string name="shape_sorting">Tri des formes</string>
+    <string name="sort_by_criteria">Trier les formes par : %1$s</string>
+    <string name="sort_by_color">Couleur</string>
+    <string name="sort_by_shape_type">Type de forme</string>
+    <string name="sort_by_corners">Nombre de coins</string>
+    <string name="category_color_1">Catégorie 1 (%1$s)</string>
+    <string name="category_color_2">Catégorie 2 (%1$s)</string>
+    <string name="category_shape_1">Formes angulaires</string>
+    <string name="category_shape_2">Formes rondes</string>
+    <string name="category_corners_1">Catégorie 1 (%1$s)</string>
+    <string name="category_corners_2">Catégorie 2 (%1$s)</string>
+    <string name="check_sorting">Vérifier</string>
+    <string name="sorting_incomplete_message">Veuillez placer toutes les formes dans les catégories.</string>
+    <string name="sorting_success">Vous avez trié correctement !</string>
+    <string name="sorting_failure">Faux ! Réessayez.</string>
+
+    <string name="shape_puzzle">Puzzle de formes</string>
+    <string name="complete_puzzle">Terminer le puzzle</string>
+    <string name="check_puzzle">Vérifier</string>
+    <string name="puzzle_incomplete">Veuillez placer toutes les pièces.</string>
+    <string name="puzzle_success">Puzzle terminé !</string>
+    <string name="puzzle_failure">Certaines pièces sont mal placées.</string>
+    <string name="level_complete_message_puzzle">Puzzle terminé !</string>
+    <string name="puzzle_shape_available_desc">ID de la pièce de puzzle disponible %1$d</string>
+    <string name="puzzle_shape_placed_desc">ID de la pièce de puzzle placée %1$d</string>
+    <string name="puzzle_shape_selected_desc">ID de la pièce de puzzle sélectionnée %1$d</string>
+
+    <string name="shape_hunt">Chasse aux formes</string>
+    <string name="find_all_shapes">Trouvez toutes les formes de %1$s !</string>
+    <string name="found_shapes">Trouvées : %1$d/%2$d</string>
+    <string name="level_complete_message_hunt">Vous les avez toutes trouvées !</string>
+    <string name="hunt_already_found">Vous avez déjà trouvé celle-ci !</string>
+
+    <string name="enter_pin">Entrer le code PIN</string>
+    <string name="pin_incorrect">Code PIN incorrect</string>
+    <string name="progress_report">Rapport de progression</string>
+    <string name="reset_progress">Réinitialiser la progression</string>
+    <string name="change_pin">Changer le code PIN</string>
+    <string name="confirm_reset_progress_title">Réinitialiser la progression ?</string>
+    <!-- Kesme işareti düzeltildi -->
+    <string name="confirm_reset_progress_message">Toute la progression de l\'utilisateur sera supprimée. Êtes-vous sûr ?</string>
+
+    <string name="shape_circle">Cercle</string>
+    <string name="shape_square">Carré</string>
+    <string name="shape_triangle">Triangle</string>
+    <string name="shape_rectangle">Rectangle</string>
+    <string name="shape_oval">Ovale</string>
+    <string name="shape_star">Étoile</string>
+    <string name="shape_heart">Cœur</string>
+    <string name="shape_hexagon">Hexagone</string>
+    <string name="shape_outline_for_tracing">Contour de la forme pour le tracé</string>
+    <string name="shapes_to_sort_list">Liste des formes à trier</string>
+    <string name="category_1_shapes_list">Liste des formes de la catégorie 1</string>
+    <string name="category_2_shapes_list">Liste des formes de la catégorie 2</string>
+    <string name="cd_game_mode_list">Liste des modes de jeu</string>
+    <string name="parent_zone_title">Zone parents</string>
+
+    <string name="cd_level_icon">Icône du niveau</string>
+    <string name="cd_level_status">Statut du niveau</string>
+    <string name="cd_background_image">Image de fond</string>
+    <string name="cd_puzzle_background">Fond du puzzle</string>
+
+
+    <string name="level_1">Niveau 1</string>
+    <string name="level_2">Niveau 2</string>
+    <string name="level_3">Niveau 3</string>
+</resources>

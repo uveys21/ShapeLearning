@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Учим формы</string>
+
+    <string name="back">Назад</string>
+    <string name="next">Вперед</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="check">Проверить</string>
+    <string name="clear">Очистить</string>
+    <string name="success">Успешно!</string>
+    <string name="failure">Попробуйте еще раз!</string>
+    <string name="level_complete">Уровень завершен!</string>
+    <string name="continue_text">Продолжить</string>
+    <string name="exit">Выход</string>
+    <string name="loading">Загрузка...</string>
+    <string name="loading_level">Загрузка уровня...</string>
+    <string name="error_generic">Произошла ошибка.</string>
+    <string name="score">Счет: %1$d</string>
+    <string name="sortable_shape_desc">Идентификатор сортируемой фигуры %1$d</string>
+    <string name="hunt_scene_description">Сцена охоты за фигурами</string>
+
+    <string name="dialog_ok">ОК</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_yes">Да</string>
+    <string name="dialog_no">Нет</string>
+    <string name="dialog_replay">Играть снова</string>
+    <string name="dialog_next_level">Следующий уровень</string>
+
+    <string name="hello_user">Привет, %1$s!</string>
+    <string name="hello_guest">Привет, гость!</string>
+    <string name="play">Играть</string>
+    <string name="settings">Настройки</string>
+    <string name="parent_zone">Родительская зона</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="sound">Звуковые эффекты</string>
+    <string name="music">Музыка</string>
+    <string name="language">Язык</string>
+    <string name="difficulty">Сложность</string>
+    <string name="difficulty_easy">Легко</string>
+    <string name="difficulty_medium">Средне</string>
+    <string name="difficulty_hard">Сложно</string>
+    <string name="settings_saved">Настройки сохранены.</string>
+    <string name="settings_save_error">Не удалось сохранить настройки.</string>
+
+    <string name="language_turkish">Турецкий</string>
+    <string name="language_english">Английский</string>
+    <string name="language_german">Немецкий</string>
+    <string name="language_french">Французский</string>
+    <string name="language_spanish">Испанский</string>
+    <string name="language_arabic">Арабский</string>
+    <string name="language_russian">Русский</string>
+
+    <string name="game_modes">Режимы игры</string>
+    <string name="game_mode_discovery_title">Открытие</string>
+    <string name="game_mode_discovery_description">Узнавайте фигуры и изучайте их свойства.</string>
+    <string name="game_mode_tracing_title">Обводка</string>
+    <string name="game_mode_tracing_description">Развивайте моторику, обводя фигуры.</string>
+    <string name="game_mode_matching_title">Сопоставление</string>
+    <string name="game_mode_matching_description">Находите и сопоставляйте одинаковые фигуры.</string>
+    <string name="game_mode_sorting_title">Сортировка</string>
+    <string name="game_mode_sorting_description">Сортируйте фигуры по цвету или типу.</string>
+    <string name="game_mode_puzzle_title">Пазл</string>
+    <string name="game_mode_puzzle_description">Завершите пазл, разместив фигуры в правильных местах.</string>
+    <string name="game_mode_hunt_title">Охота за фигурами</string>
+    <string name="game_mode_hunt_description">Найдите спрятанные фигуры на картинке.</string>
+
+    <string name="levels">Уровни</string>
+    <string name="level">Уровень %1$d</string>
+    <string name="locked">Заблокировано</string>
+    <string name="level_locked">Уровень заблокирован</string>
+
+    <string name="shape_discovery">Изучение фигур</string>
+    <string name="shape_image_description">Изображение фигуры</string>
+    <string name="play_shape_sound">Воспроизвести звук фигуры</string>
+    <string name="shape_corners">Углы: %1$d</string>
+    <string name="shape_sides">Стороны: %1$d</string>
+    <string name="shape_real_life_examples">Примеры из реальной жизни</string>
+    <string name="real_life_example_image">Изображение примера из реальной жизни</string>
+    <string name="rotate_shape">Повернуть фигуру</string>
+    <string name="previous_shape">Предыдущая фигура</string>
+    <string name="next_shape">Следующая фигура</string>
+
+    <string name="shape_tracing">Обводка фигур</string>
+    <string name="trace_shape">Обвести фигуру</string>
+    <string name="trace_again">Обвести снова</string>
+    <string name="tracing_too_short">Пожалуйста, обведите фигуру!</string>
+    <string name="tracing_success_feedback">Успешно! Точность: %1$d%%</string>
+    <string name="tracing_failure_feedback">Попробуйте еще раз! Точность: %1$d%%</string>
+
+    <string name="shape_matching">Сопоставление фигур</string>
+    <string name="match_shapes">Сопоставить фигуры</string>
+    <string name="pairs_found">Найдено пар: %1$d/%2$d</string>
+    <string name="card_description_hidden">Скрытая карта</string>
+    <string name="card_description_prefix">Идентификатор фигуры на карте</string>
+    <string name="level_complete_title">Поздравляем!</string>
+    <string name="level_complete_message">Уровень завершен! Ваш счет: %1$d</string>
+
+    <string name="shape_sorting">Сортировка фигур</string>
+    <string name="sort_by_criteria">Сортировать фигуры по: %1$s</string>
+    <string name="sort_by_color">Цвет</string>
+    <string name="sort_by_shape_type">Тип фигуры</string>
+    <string name="sort_by_corners">Количество углов</string>
+    <string name="category_color_1">Категория 1 (%1$s)</string>
+    <string name="category_color_2">Категория 2 (%1$s)</string>
+    <string name="category_shape_1">Угловатые фигуры</string>
+    <string name="category_shape_2">Круглые фигуры</string>
+    <string name="category_corners_1">Категория 1 (%1$s)</string>
+    <string name="category_corners_2">Категория 2 (%1$s)</string>
+    <string name="check_sorting">Проверить</string>
+    <string name="sorting_incomplete_message">Пожалуйста, разместите все фигуры по категориям.</string>
+    <string name="sorting_success">Вы правильно отсортировали!</string>
+    <string name="sorting_failure">Неправильно! Попробуйте еще раз.</string>
+
+    <string name="shape_puzzle">Пазл с фигурами</string>
+    <string name="complete_puzzle">Собрать пазл</string>
+    <string name="check_puzzle">Проверить</string>
+    <string name="puzzle_incomplete">Пожалуйста, разместите все части.</string>
+    <string name="puzzle_success">Пазл собран!</string>
+    <string name="puzzle_failure">Некоторые части находятся не на своем месте.</string>
+    <string name="level_complete_message_puzzle">Пазл собран!</string>
+    <string name="puzzle_shape_available_desc">Идентификатор доступной части пазла %1$d</string>
+    <string name="puzzle_shape_placed_desc">Идентификатор размещенной части пазла %1$d</string>
+    <string name="puzzle_shape_selected_desc">Идентификатор выбранной части пазла %1$d</string>
+
+    <string name="shape_hunt">Охота за фигурами</string>
+    <string name="find_all_shapes">Найдите все %1$s фигуры!</string>
+    <string name="found_shapes">Найдено: %1$d/%2$d</string>
+    <string name="level_complete_message_hunt">Вы нашли их все!</string>
+    <string name="hunt_already_found">Вы уже нашли эту!</string>
+
+    <string name="enter_pin">Введите PIN-код</string>
+    <string name="pin_incorrect">Неверный PIN-код</string>
+    <string name="progress_report">Отчет о прогрессе</string>
+    <string name="reset_progress">Сбросить прогресс</string>
+    <string name="change_pin">Изменить PIN-код</string>
+    <string name="confirm_reset_progress_title">Сбросить прогресс?</string>
+    <string name="confirm_reset_progress_message">Весь прогресс пользователя будет удален. Вы уверены?</string>
+
+    <string name="shape_circle">Круг</string>
+    <string name="shape_square">Квадрат</string>
+    <string name="shape_triangle">Треугольник</string>
+    <string name="shape_rectangle">Прямоугольник</string>
+    <string name="shape_oval">Овал</string>
+    <string name="shape_star">Звезда</string>
+    <string name="shape_heart">Сердце</string>
+    <string name="shape_hexagon">Шестиугольник</string>
+    <string name="shape_outline_for_tracing">Контур фигуры для обводки</string>
+    <string name="shapes_to_sort_list">Список фигур для сортировки</string>
+    <string name="category_1_shapes_list">Список фигур категории 1</string>
+    <string name="category_2_shapes_list">Список фигур категории 2</string>
+    <string name="cd_game_mode_list">Список режимов игры</string>
+    <string name="parent_zone_title">Родительская зона</string>
+
+    <string name="cd_level_icon">Иконка уровня</string>
+    <string name="cd_level_status">Статус уровня</string>
+    <string name="cd_background_image">Фоновое изображение</string>
+    <string name="cd_puzzle_background">Фон пазла</string>
+    <string name="level_1">Уровень 1</string>
+    <string name="level_2">Уровень 2</string>
+    <string name="level_3">Уровень 3</string>
+
+
+</resources>

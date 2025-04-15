@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_large"
+    tools:context=".ui.parent.ParentPinFragment">
+
+    <!-- Başlık TextView'ı EKLENDİ -->
+    <TextView
+        android:id="@+id/tvPinTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_pin"
+        android:textAppearance="@style/TextAppearance.ShapeLearning.Headline6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintBottom_toTopOf="@+id/etPin"/>
+    <!-- EditText'in üstüne konumlandırıldı -->
+
+    <!-- PIN Giriş EditText'i -->
+    <EditText
+        android:id="@+id/etPin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_pin"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:textAlignment="center"
+        android:minHeight="48dp"
+        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintTop_toBottomOf="@id/tvPinTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:importantForAutofill="no"/>
+
+    <!-- Gönder/Onayla Butonu (Genellikle PIN girişinden sonra gerekir) -->
+    <Button
+        android:id="@+id/btnConfirmPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_ok"
+        app:layout_constraintTop_toBottomOf="@id/etPin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_large"/>
+
+    <!-- Ortadaki geçici TextView kaldırılabilir veya amaca uygun hale getirilebilir -->
+    <!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parent Pin Fragment Layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+     -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

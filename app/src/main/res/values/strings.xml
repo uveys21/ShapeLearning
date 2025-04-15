@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Uygulama Adı -->
+    <string name="app_name">Şekil Öğreniyorum</string>
+
+    <!-- Genel Kullanım -->
+    <string name="back">Geri</string>
+    <string name="next">İleri</string>
+    <string name="save">Kaydet</string>
+    <string name="cancel">İptal</string>
+    <string name="check">Kontrol Et</string>
+    <string name="clear">Temizle</string>
+    <string name="success">Başarılı!</string>
+    <string name="failure">Tekrar Dene!</string>
+    <string name="level_complete">Seviye Tamamlandı!</string>
+    <string name="continue_text">Devam Et</string>
+    <string name="exit">Çıkış</string>
+    <string name="loading">Yükleniyor...</string>
+    <string name="loading_level">Seviye Yükleniyor...</string>
+    <string name="error_generic">Bir hata oluştu.</string>
+    <string name="score">Puan: %1$d</string>
+    <string name="sortable_shape_desc">Sıralanabilir şekil ID %1$d</string>
+    <string name="hunt_scene_description">Şekil avı sahnesi</string>
+
+    <!-- Dialog Butonları -->
+    <string name="dialog_ok">Tamam</string>
+    <string name="dialog_cancel">İptal</string>
+    <string name="dialog_yes">Evet</string>
+    <string name="dialog_no">Hayır</string>
+    <string name="dialog_replay">Tekrar Oyna</string>
+    <string name="dialog_next_level">Sonraki Seviye</string>
+
+    <!-- Ana Menü ve Kullanıcı -->
+    <string name="hello_user">Merhaba, %1$s!</string>
+    <string name="hello_guest">Merhaba Misafir!</string>
+    <string name="play">Oyna</string>
+    <string name="settings">Ayarlar</string>
+    <string name="parent_zone">Ebeveyn Bölümü</string>
+
+    <!-- Ayarlar -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="sound">Ses Efektleri</string>
+    <string name="music">Müzik</string>
+    <string name="language">Dil</string>
+    <string name="difficulty">Zorluk</string>
+    <string name="difficulty_easy">Kolay</string>
+    <string name="difficulty_medium">Orta</string>
+    <string name="difficulty_hard">Zor</string>
+    <string name="settings_saved">Ayarlar kaydedildi.</string>
+    <string name="settings_save_error">Ayarlar kaydedilemedi.</string>
+
+    <!-- Dil İsimleri -->
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="language_german">Deutsch</string>
+    <string name="language_french">Français</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_russian">Русский</string>
+
+    <!-- Oyun Modları -->
+    <string name="game_modes">Oyun Modları</string>
+    <string name="game_mode_discovery_title">Keşfet</string>
+    <string name="game_mode_discovery_description">Şekilleri tanı ve özelliklerini öğren.</string>
+    <string name="game_mode_tracing_title">Çizim</string>
+    <string name="game_mode_tracing_description">Şekillerin üzerinden çizerek el becerini geliştir.</string>
+    <string name="game_mode_matching_title">Eşleştirme</string>
+    <string name="game_mode_matching_description">Aynı şekilleri bul ve eşleştir.</string>
+    <string name="game_mode_sorting_title">Sıralama</string>
+    <string name="game_mode_sorting_description">Şekilleri renklerine veya türlerine göre ayır.</string>
+    <string name="game_mode_puzzle_title">Yapboz</string>
+    <string name="game_mode_puzzle_description">Şekilleri doğru yerlerine yerleştirerek yapbozu tamamla.</string>
+    <string name="game_mode_hunt_title">Şekil Avı</string>
+    <string name="game_mode_hunt_description">Resimdeki gizlenmiş şekilleri bul.</string>
+
+    <!-- Seviye Seçimi -->
+    <string name="levels">Seviyeler</string>
+    <string name="level">Seviye %1$d</string>
+    <string name="locked">Kilitli</string>
+    <string name="level_locked">Seviye Kilitli</string>
+
+    <!-- Şekil Keşfi (Discovery) -->
+    <string name="shape_discovery">Şekil Keşfi</string>
+    <string name="shape_image_description">Şekil görseli</string>
+    <string name="play_shape_sound">Şeklin sesini çal</string>
+    <string name="shape_corners">Köşeler: %1$d</string>
+    <string name="shape_sides">Kenarlar: %1$d</string>
+    <string name="shape_real_life_examples">Günlük Hayattan Örnekler</string>
+    <string name="real_life_example_image">Gerçek hayat örneği görseli</string>
+    <string name="rotate_shape">Şekli Döndür</string>
+    <string name="previous_shape">Önceki Şekil</string>
+    <string name="next_shape">Sonraki Şekil</string>
+
+    <!-- Şekil İzleme (Tracing) -->
+    <string name="shape_tracing">Şekil Çizimi</string>
+    <string name="trace_shape">Şekli İzle</string>
+    <string name="trace_again">Tekrar İzle</string>
+    <string name="tracing_too_short">Lütfen şeklin üzerinden çizin!</string>
+    <string name="tracing_success_feedback">Başarılı! Doğruluk: %1$d%%</string>
+    <string name="tracing_failure_feedback">Tekrar Dene! Doğruluk: %1$d%%</string>
+
+    <!-- Şekil Eşleştirme (Matching) -->
+    <string name="shape_matching">Şekil Eşleştirme</string>
+    <string name="match_shapes">Şekilleri Eşleştir</string>
+    <string name="pairs_found">Bulunan Çiftler: %1$d/%2$d</string>
+    <string name="card_description_hidden">Gizli kart</string>
+    <string name="card_description_prefix">Kart şekil ID</string>
+    <string name="level_complete_title">Tebrikler!</string>
+    <string name="level_complete_message">Seviye tamamlandı! Skorunuz: %1$d</string>
+
+    <!-- Şekil Sıralama (Sorting) -->
+    <string name="shape_sorting">Şekil Sıralama</string>
+    <string name="sort_by_criteria">Şekilleri şuna göre sırala: %1$s</string>
+    <string name="sort_by_color">Renk</string>
+    <string name="sort_by_shape_type">Şekil Türü</string>
+    <string name="sort_by_corners">Köşe Sayısı</string>
+    <string name="category_color_1">Kategori 1 (%1$s)</string>
+    <string name="category_color_2">Kategori 2 (%1$s)</string>
+    <string name="category_shape_1">Köşeli Şekiller</string>
+    <string name="category_shape_2">Yuvarlak Şekiller</string>
+    <string name="category_corners_1">Kategori 1 (%1$s)</string>
+    <string name="category_corners_2">Kategori 2 (%1$s)</string>
+    <string name="check_sorting">Kontrol Et</string>
+    <string name="sorting_incomplete_message">Lütfen tüm şekilleri kategorilere yerleştirin.</string>
+    <string name="sorting_success">Doğru sıraladın!</string>
+    <string name="sorting_failure">Yanlış! Tekrar dene.</string>
+
+    <!-- Şekil Yapboz (Puzzle) -->
+    <string name="shape_puzzle">Şekil Yapbozu</string>
+    <string name="complete_puzzle">Yapbozu Tamamla</string>
+    <string name="check_puzzle">Kontrol Et</string>
+    <string name="puzzle_incomplete">Lütfen tüm parçaları yerleştirin.</string>
+    <string name="puzzle_success">Yapboz tamamlandı!</string>
+    <string name="puzzle_failure">Bazı parçalar yanlış yerde.</string>
+    <string name="level_complete_message_puzzle">Yapboz tamamlandı!</string>
+    <string name="puzzle_shape_available_desc">Mevcut yapboz parçası ID %1$d</string>
+    <string name="puzzle_shape_placed_desc">Yerleştirilmiş yapboz parçası ID %1$d</string>
+    <string name="puzzle_shape_selected_desc">Seçili yapboz parçası ID %1$d</string>
+
+    <!-- Şekil Avı (Hunt) -->
+    <string name="shape_hunt">Şekil Avı</string>
+    <string name="find_all_shapes">Tüm %1$s şekillerini bul!</string>
+    <string name="found_shapes">Bulunan: %1$d/%2$d</string>
+    <string name="level_complete_message_hunt">Hepsini buldun!</string>
+    <string name="hunt_already_found">Bunu zaten buldun!</string>
+
+    <!-- Ebeveyn Bölümü -->
+    <string name="enter_pin">PIN Kodunu Girin</string>
+    <string name="pin_incorrect">Yanlış PIN Kodu</string>
+    <string name="progress_report">İlerleme Raporu</string>
+    <string name="reset_progress">İlerlemeyi Sıfırla</string>
+    <string name="change_pin">PIN Kodunu Değiştir</string>
+    <string name="confirm_reset_progress_title">İlerlemeyi Sıfırla?</string>
+    <string name="confirm_reset_progress_message">Tüm kullanıcı ilerlemesi silinecek. Emin misiniz?</string>
+
+    <!-- Şekil İsimleri -->
+    <string name="shape_circle">Daire</string>
+    <string name="shape_square">Kare</string>
+    <string name="shape_triangle">Üçgen</string>
+    <string name="shape_rectangle">Dikdörtgen</string>
+    <string name="shape_oval">Oval</string>
+    <string name="shape_star">Yıldız</string>
+    <string name="shape_heart">Kalp</string>
+    <string name="shape_hexagon">Altıgen</string>
+    <!-- Gerekirse diğer şekilleri ekleyin -->
+    <string name="shape_outline_for_tracing">Çizim için şekil ana hattı</string>
+    <string name="shapes_to_sort_list">Sıralanacak şekiller listesi</string>
+    <string name="category_1_shapes_list">Kategori 1 şekiller listesi</string>
+    <string name="category_2_shapes_list">Kategori 2 şekiller listesi</string>
+    <string name="cd_game_mode_list">Oyun modları listesi</string>
+    <string name="parent_zone_title">Ebeveyn Bölümü</string>
+
+    <string name="cd_level_icon">Seviye ikonu</string>
+    <string name="cd_level_status">Seviye durumu</string>
+    <string name="cd_background_image">Arka plan resmi</string>
+    <string name="cd_puzzle_background">Puzzle arka planı</string>
+    <string name="level_1">Seviye 1</string>
+    <string name="level_2">Seviye 2</string>
+    <string name="level_3">Seviye 3</string>
+
+
+</resources>

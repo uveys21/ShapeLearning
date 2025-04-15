@@ -1,0 +1,131 @@
+
+
+[versions]
+material = "1.11.0"
+coreSplashScreen = "1.0.1"
+agp = "8.1.2" # Daha stabil bir sürüm
+kotlin = "1.9.22" # Güncel Kotlin sürümü
+hilt = "2.48"
+materialVersion = "1.12.0"
+navigationSafeargs = "2.7.6"
+room = "2.6.1"
+
+
+# Library Versions
+coreKtx = "1.10.0" # 1.16.0 çok yeni olabilir, 1.10.0/1.12.0 daha yaygın
+appcompat = "1.6.1" # 1.7.0 yerine 1.6.1 daha yaygın
+navigation = "2.6.0" # navigationFragmentKtx/navigationUiKtx için ortak versiyon (2.8.9 çok yeni/alpha)
+lifecycle = "2.6.1" # Lifecycle versiyonu
+coroutines = "1.6.4" # Coroutines versiyonu
+glide = "4.15.1" # Glide versiyonu
+recyclerview = "1.3.2" # RecyclerView versiyonu
+cardview = "1.0.0" # CardView versiyonu
+viewpager = "1.0.0" # ViewPager2 versiyonu
+lottie = "6.1.0" # Lottie versiyonu
+gson = "2.10.1" # Gson versiyonu
+
+# Test Library Versions
+junit = "4.13.2"
+junitExt = "1.1.5" # androidx.test.ext:junit için
+espressoCore = "3.5.1"
+espressoContrib = "3.5.1"
+mockitoCore = "5.11.0"
+mockitoKotlin = "5.2.1"
+mockitoAndroid = "5.11.0"
+archCoreTesting = "2.2.0"
+turbine = "1.0.0"
+uiTestAndroid = "1.7.8"
+navigationFragmentKtx = "2.8.9"
+navigationUiKtx = "2.8.9"
+material3 = "1.4.0-alpha12"
+material3Version = "1.2.1"
+androidxMaterial = "1.8.0-rc03"
+composeThemeAdapter = "1.2.1"
+
+
+[libraries]
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashScreen" }
+# Hilt
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
+# Room
+material-v1120 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+# Kotlin
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" } # Veya kotlin-stdlib-jdk8
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+
+# UI
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version = "2.1.4" } # Versiyon eksikti, eklendi
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview"}
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview"}
+androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager"}
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}
+
+# Navigation
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+
+# Lifecycle
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+# androidx-lifecycle-common-java8 = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "lifecycle" } # JVM 11/17 için gerekmeyebilir
+
+# Room
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" } # Kapt için
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" } # Coroutines desteği
+
+# Coroutines
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Hilt
+
+# Glide
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" } # Kapt için
+
+# Gson
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+
+# Test Libraries - Unit Test
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockitoCore" }
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockitoKotlin" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+androidx-arch-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "archCoreTesting" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+
+# Test Libraries - Instrumentation Test
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitExt" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-espresso-contrib = { group = "androidx.test.espresso", name = "espresso-contrib", version.ref = "espressoContrib" }
+mockito-android = { group = "org.mockito", name = "mockito-android", version.ref = "mockitoAndroid" }
+androidx-ui-test-android = { group = "androidx.compose.ui", name = "ui-test-android", version.ref = "uiTestAndroid" }
+navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3Version" }
+androidx-material = { group = "androidx.compose.material", name = "material", version.ref = "androidxMaterial" }
+compose-theme-adapter = { group = "com.google.android.material", name = "compose-theme-adapter", version.ref = "composeThemeAdapter" }
+# Hilt Testing (Gerekirse)
+# hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+
+
+[plugins]
+
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationSafeargs" }
+# Plugin tanımlamaları (ID ve Versiyon)
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# Kapt ve Parcelize genellikle ID ile uygulanır, ama referans da oluşturulabilir:
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
