@@ -12,13 +12,13 @@
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_large">24dp</dimen>
     <dimen name="padding_xlarge">32dp</dimen>
-    
+
     <!-- Bileşen Boyutları -->
     <dimen name="button_height">64dp</dimen>
     <dimen name="button_width">200dp</dimen>
     <dimen name="icon_size_small">32dp</dimen>
     <dimen name="icon_size_medium">48dp</dimen>
-    <dimen name="icon_size_large">64dp</dimen>
+    <dimen name="icon_size_large">64dp</dimen>s
     <dimen name="shape_size_small">80dp</dimen>
     <dimen name="shape_size_medium">120dp</dimen>
     <dimen name="shape_size_large">160dp</dimen>
@@ -28,7 +28,7 @@
     <dimen name="corner_radius_medium">16dp</dimen>
     <dimen name="corner_radius_large">24dp</dimen>
     <dimen name="corner_radius_xlarge">32dp</dimen>
-    
+
     <!-- Metin Boyutları -->
     <dimen name="text_size_small">16sp</dimen>
     <dimen name="text_size_medium">20sp</dimen>
@@ -36,7 +36,7 @@
     <dimen name="text_size_xlarge">32sp</dimen>
     <dimen name="text_size_xxlarge">40sp</dimen>
     
-    <!-- Dokunma Hedefi Minimum Boyutu -->
+        <!-- Dokunma Hedefi Minimum Boyutu -->
     <dimen name="min_touch_target_size">48dp</dimen>
 
     <dimen name="hunt_marker_stroke_width">3dp</dimen> <!-- Hunt İşaretleyici Kalınlığı -->
@@ -46,8 +46,6 @@
     <!-- Kart Görünümü Ayarları -->
     <dimen name="card_corner_radius">8dp</dimen>
     <dimen name="card_elevation">4dp</dimen>
-
-
 
     <!-- Metin Boyutları (Material Design Önerileri) -->
     <dimen name="text_size_headline1">96sp</dimen>
@@ -63,25 +61,18 @@
     <dimen name="text_size_button">14sp</dimen>
     <dimen name="text_size_caption">12sp</dimen>
     <dimen name="text_size_overline">10sp</dimen>
-    <dimen name="card_corner_radius_medium">8dp</dimen>
-    <dimen name="grid_spacing">8dp</dimen>
-
 
     <!-- Buton Boyutları -->
     <dimen name="button_corner_radius">24dp</dimen> <!-- Tam yuvarlak köşeler için yüksekliğin yarısı olabilir veya sabit değer -->
     <dimen name="button_padding_vertical">12dp</dimen>
     <dimen name="button_padding_horizontal">24dp</dimen>
     <dimen name="main_menu_button_height">72dp</dimen>
-
-    <!-- ... diğer boyutlarınız ... -->
-    <dimen name="card_elevation_medium">4dp</dimen>
-    <dimen name="card_elevation_large">6dp</dimen> <!-- Ana menü butonları için biraz daha fazla -->
-    <dimen name="button_padding_horizontal_small">16dp</dimen> <!-- TextButton için daha az yatay padding -->
-
-
-
-        <!-- Genellikle yazı tipi boyutundan biraz daha büyük olurlar -->
-        <dimen name="text_body_line_height">24sp</dimen> <!-- Body1 (16sp) için örnek -->
-        <dimen name="text_body_line_height_small">20sp</dimen>
+    <dimen name="card_corner_radius_medium">8dp</dimen>
+    <dimen name="grid_spacing">8dp</dimen>
+    <dimen name="card_elevation_medium">4dp</dimen> <!-- ... diğer boyutlarınız ... -->
+    <dimen name="card_elevation_large">6dp</dimen>
+    <dimen name="button_padding_horizontal_small">16dp</dimen>
+    <dimen name="text_body_line_height">24sp</dimen>
+    <dimen name="text_body_line_height_small">20sp</dimen> <!-- Genellikle yazı tipi boyutundan biraz daha büyük olurlar -->
 
 </resources>

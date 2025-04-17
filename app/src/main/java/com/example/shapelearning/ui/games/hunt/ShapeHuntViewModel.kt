@@ -1,6 +1,5 @@
 package com.example.shapelearning.ui.games.hunt
 
-import android.util.Log // Added
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,19 +12,18 @@ import com.example.shapelearning.data.preferences.SettingsPreferences
 import com.example.shapelearning.data.repository.LevelRepository
 import com.example.shapelearning.data.repository.ShapeRepository
 import com.example.shapelearning.data.repository.UserProgressRepository
-import com.example.shapelearning.data.repository.UserRepository // Added
-import com.example.shapelearning.service.audio.AudioManager // Added for sounds
-import com.example.shapelearning.utils.Event // Added
-import com.google.gson.Gson // Added
-import com.google.gson.JsonSyntaxException // Added
-import com.google.gson.reflect.TypeToken // Added
+import com.example.shapelearning.data.repository.UserRepository
+import com.example.shapelearning.service.audio.AudioManager
+import com.example.shapelearning.utils.Event
+import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
+import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Job // Added
-import kotlinx.coroutines.flow.* // Added
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
-import kotlin.math.max // Added
-import kotlin.math.sqrt // Added
+import kotlin.math.max
+import kotlin.math.sqrt
 
 @HiltViewModel
 class ShapeHuntViewModel @Inject constructor(
@@ -33,9 +31,9 @@ class ShapeHuntViewModel @Inject constructor(
     private val levelRepository: LevelRepository,
     private val userProgressRepository: UserProgressRepository,
     private val userRepository: UserRepository, // Added
-    private val settingsPreferences: SettingsPreferences,
-    private val audioManager: AudioManager, // Added
-    private val gson: Gson // Added
+    private val settingsPreferences: SettingsPreferences, // Added
+    private val audioManager: AudioManager,
+    private val gson: Gson
 ) : ViewModel() {
 
     private val _currentLevel = MutableLiveData<Level?>()

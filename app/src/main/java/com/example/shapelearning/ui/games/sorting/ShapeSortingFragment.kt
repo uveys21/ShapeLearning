@@ -3,11 +3,9 @@ package com.example.shapelearning.ui.games.sorting
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log // Added
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast // Added
-import androidx.core.view.isVisible // Added
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -15,19 +13,16 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ItemTouchHelper // Added
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView // Added
-import com.example.shapelearning.R
 import com.example.shapelearning.databinding.FragmentShapeSortingBinding
 import com.example.shapelearning.service.audio.AudioManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import com.example.shapelearning.R
 
 @AndroidEntryPoint
-// Modified: Remove ShapeSortingAdapter.OnShapeDragListener - will use ItemTouchHelper
 class ShapeSortingFragment : Fragment() {
 
-    private var _binding: FragmentShapeSortingBinding? = null
-    private val binding get() = _binding!!
-
+    private var binding: FragmentShapeSortingBinding? = null
     private val viewModel: ShapeSortingViewModel by viewModels()
     private val args: ShapeSortingFragmentArgs by navArgs()
 
@@ -44,10 +39,10 @@ class ShapeSortingFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
-        container: ViewGroup?,
+        container: ViewGroup?, // Modified: use binding?.root
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentShapeSortingBinding.inflate(inflater, container, false)
+        binding = FragmentShapeSortingBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -66,12 +61,12 @@ class ShapeSortingFragment : Fragment() {
     private fun setupUI() {
         // Add content descriptions in XML
 
-        binding.ivBack.setOnClickListener {
+        binding?.ivBack?.setOnClickListener {
             audioManager.playSound(R.raw.button_click)
             findNavController().navigateUp()
         }
 
-        binding.btnCheck.setOnClickListener {
+        binding?.btnCheck?.setOnClickListener {
             audioManager.playSound(R.raw.button_click)
             if (viewModel.shapesToSort.value?.isNotEmpty() == true) {
                 Toast.makeText(requireContext(), R.string.sorting_incomplete_message, Toast.LENGTH_SHORT).show() // Add string
@@ -86,20 +81,20 @@ class ShapeSortingFragment : Fragment() {
         shapesAdapter = ShapeSortingAdapter { viewHolder -> // Lambda to start drag
             itemTouchHelper?.startDrag(viewHolder)
         }
-        binding.rvShapesToSort.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rvShapesToSort.adapter = shapesAdapter
+        binding?.rvShapesToSort?.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding?.rvShapesToSort?.adapter = shapesAdapter
 
         category1Adapter = ShapeSortingAdapter { viewHolder ->
             itemTouchHelper?.startDrag(viewHolder)
         }
-        binding.rvCategory1.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rvCategory1.adapter = category1Adapter
+        binding?.rvCategory1?.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding?.rvCategory1?.adapter = category1Adapter
 
         category2Adapter = ShapeSortingAdapter { viewHolder ->
             itemTouchHelper?.startDrag(viewHolder)
         }
-        binding.rvCategory2.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rvCategory2.adapter = category2Adapter
+        binding?.rvCategory2?.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding?.rvCategory2?.adapter = category2Adapter
     }
 
 
@@ -198,9 +193,9 @@ class ShapeSortingFragment : Fragment() {
                 val dropY = location[1] + draggedItemView.height / 2 // Bırakma noktasının Y merkezi
 
                 val rvLocations = mapOf(
-                    binding.rvShapesToSort to shapesAdapter,
-                    binding.rvCategory1 to category1Adapter,
-                    binding.rvCategory2 to category2Adapter
+                    binding?.rvShapesToSort to shapesAdapter,
+                    binding?.rvCategory1 to category1Adapter,
+                    binding?.rvCategory2 to category2Adapter
                 )
 
                 for ((rv, adapter) in rvLocations) {
@@ -237,9 +232,9 @@ class ShapeSortingFragment : Fragment() {
         }
 
         itemTouchHelper = ItemTouchHelper(callback)
-        itemTouchHelper?.attachToRecyclerView(binding.rvShapesToSort)
-        itemTouchHelper?.attachToRecyclerView(binding.rvCategory1)
-        itemTouchHelper?.attachToRecyclerView(binding.rvCategory2)
+        itemTouchHelper?.attachToRecyclerView(binding?.rvShapesToSort)
+        itemTouchHelper?.attachToRecyclerView(binding?.rvCategory1)
+        itemTouchHelper?.attachToRecyclerView(binding?.rvCategory2)
     }
     // --- End Drag and Drop Setup ---
 
@@ -269,9 +264,9 @@ class ShapeSortingFragment : Fragment() {
 
 
     private fun observeViewModel() {
-        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            binding.progressBar?.isVisible = isLoading // Add ProgressBar
-            binding.contentGroup?.isVisible = !isLoading // Group content views
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading -> // Modified: Use binding?.let
+            binding?.progressBar?.isVisible = isLoading
+            binding?.contentGroup?.isVisible = !isLoading
         }
 
         viewModel.shapesToSort.observe(viewLifecycleOwner) { shapes ->
@@ -291,13 +286,13 @@ class ShapeSortingFragment : Fragment() {
 
         // Observe sorting criteria and category names
         viewModel.sortingCriteriaText.observe(viewLifecycleOwner) { criteria ->
-            binding.tvInstructions.text = criteria
+            binding?.tvInstructions?.text = criteria
         }
         viewModel.category1Name.observe(viewLifecycleOwner) { name ->
-            binding.tvCategory1.text = name // Ensure tvCategory1 ID exists in XML
+            binding?.tvCategory1?.text = name
         }
         viewModel.category2Name.observe(viewLifecycleOwner) { name ->
-            binding.tvCategory2.text = name // Ensure tvCategory2 ID exists in XML
+            binding?.tvCategory2?.text = name
         }
 
         viewModel.sortingResult.observe(viewLifecycleOwner) { result ->
@@ -350,10 +345,11 @@ class ShapeSortingFragment : Fragment() {
     override fun onDestroyView() {
         itemTouchHelper?.attachToRecyclerView(null) // Detach helper
         itemTouchHelper = null
-        binding.rvShapesToSort.adapter = null
-        binding.rvCategory1.adapter = null
-        binding.rvCategory2.adapter = null
-        _binding = null
+        binding?.rvShapesToSort?.adapter = null
+        binding?.rvCategory1?.adapter = null
+        binding?.rvCategory2?.adapter = null
+        binding = null
         super.onDestroyView()
     }
+
 }

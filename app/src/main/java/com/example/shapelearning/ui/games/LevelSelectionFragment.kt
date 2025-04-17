@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.shapelearning.R
 import com.example.shapelearning.data.model.Difficulty
 import com.example.shapelearning.data.model.GameMode
@@ -308,7 +307,7 @@ class LevelSelectionFragment : Fragment() {
     private fun navigateToShapeMatching(levelId: Int) {
         val action = LevelSelectionFragmentDirections.actionLevelSelectionFragmentToShapeTracingFragment(levelId)
         findNavController().navigate(action)
-    }
+}
 
     private fun navigateToShapeSorting(levelId: Int) {
         val action = LevelSelectionFragmentDirections.actionLevelSelectionFragmentToShapeTracingFragment(levelId)

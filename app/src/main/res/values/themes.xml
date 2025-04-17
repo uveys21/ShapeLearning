@@ -52,7 +52,7 @@
         <item name="postSplashScreenTheme">@style/Theme.ShapeLearning</item>
         <!-- Android 12 Öncesi için Geriye Dönük Uyumluluk -->
         <item name="android:windowBackground">@color/primary</item>
-    </style>
+     </style>
 
 
     <!-- ===================================================================================== -->
@@ -60,7 +60,7 @@
     <!-- ===================================================================================== -->
 
     <!-- Temel Metin Görünümü (M2 Body1'den türetildi) -->
-    <style name="TextAppearance.ShapeLearning" parent="TextAppearance.MaterialComponents.Body1"/>
+    <style name="TextAppearance.ShapeLearning" parent="TextAppearance.MaterialComponents.Body1" />
 
     <!-- Başlık (Headline) Stilleri -->
     <style name="TextAppearance.ShapeLearning.Headline1" parent="TextAppearance.MaterialComponents.Headline1"/>
@@ -119,7 +119,7 @@
     <!-- ===================================================================================== -->
 
     <!-- Genel CardView Stili -->
-    <style name="Widget.ShapeLearning.CardView" parent="Widget.MaterialComponents.CardView">
+    <style name="Widget.ShapeLearning.CardView" parent="Widget.MaterialComponents.CardView" >
         <item name="cardElevation">@dimen/card_elevation_medium</item> <!-- Gölge (dimens.xml) -->
         <item name="cardBackgroundColor">@color/card_background</item> <!-- Arka plan (colors.xml) -->
         <!-- Gerekirse köşe yuvarlaklığı vb. eklenebilir: <item name="cardCornerRadius">@dimen/card_corner_radius</item> -->
@@ -172,38 +172,6 @@
         <item name="iconTint">@color/primary</item> <!-- İkon rengi (varsa) -->
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
-    </style>
-
-    <!-- ===================================================================================== -->
-    <!-- == ÖZEL MENÜ VB. STİLLER (Basitleştirilmiş / Kaldırılmış) == -->
-    <!-- ===================================================================================== -->
-
-    <!-- ÖNERİ: Aşağıdaki "MenuButton" ile ilgili stiller yerine,
-         layout XML dosyalarınızda doğrudanTextAppearance, CardView stili ve
-         gravity, clickable gibi öznitelikleri kullanın. -->
-
-    <!-- Ana Menü Butonlarının Metin Stili (Eğer tümü beyaz olacaksa) -->
-    <style name="TextAppearance.ShapeLearning.MenuButton" parent="TextAppearance.ShapeLearning.Button">
-        <item name="android:textColor">@color/white</item>
-        <!-- Gravity gibi layout özellikleri BURADA OLMAMALI -->
-    </style>
-
-    <!-- Widget.ShapeLearning.CardView.MenuButton stilini kullanmak yerine temel CardView stilini kullanıp
-         layout'ta elevation, foreground gibi özellikleri ayarlayın. -->
-
-    <!-- Widget.ShapeLearning.MenuButtonIcon stilini kullanmak yerine ImageView'a doğrudan
-         tint uygulayın (layout XML'inde app:tint="@color/white" gibi). -->
-
-    <!-- themes.xml içine geri eklenebilir -->
-    <style name="Widget.ShapeLearning.CardView.MenuButton" parent="Widget.ShapeLearning.CardView">
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:foreground">?attr/selectableItemBackground</item>
-        <item name="cardElevation">@dimen/card_elevation_large</item>
-    </style>
-
-    <style name="Widget.ShapeLearning.MenuButtonIcon">
-        <item name="android:tint">@color/white</item>
     </style>
 
     <style name="Widget.ShapeLearning.MenuButtonText" parent="TextAppearance.ShapeLearning.Button">

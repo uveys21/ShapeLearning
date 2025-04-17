@@ -1,7 +1,6 @@
 package com.example.shapelearning.ui.main
 
 import android.os.Bundle
-import android.util.Log // Added
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.shapelearning.R
 import com.example.shapelearning.databinding.FragmentMainMenuBinding
 import com.example.shapelearning.service.audio.AudioManager
+import com.example.shapelearning.utils.NavigationHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -26,13 +26,16 @@ class MainMenuFragment : Fragment() {
     @Inject
     lateinit var audioManager: AudioManager
 
+    @Inject
+    lateinit var navigationHelper: NavigationHelper
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMainMenuBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,53 +47,40 @@ class MainMenuFragment : Fragment() {
 
     private fun setupUI() {
         // Add content descriptions to CardViews/ImageViews in fragment_main_menu.xml
-
-        // Show loading indicator initially
-        binding.progressBar.isVisible = true // Assuming you add a ProgressBar with id="progressBar"
-        binding.tvUserName.isVisible = false
-
-        binding.cardViewPlay.setOnClickListener {
-            audioManager.playSound(R.raw.button_click) // Ensure resource exists
-            // TODO: Check if a user is selected before navigating, or navigate to user selection
-            findNavController().navigate(R.id.action_mainMenuFragment_to_gameModeSelectionFragment)
-        }
-
-        binding.cardViewSettings.setOnClickListener {
-            audioManager.playSound(R.raw.button_click)
-            findNavController().navigate(R.id.action_mainMenuFragment_to_settingsFragment)
-        }
-
-        binding.cardViewParentZone.setOnClickListener {
-            audioManager.playSound(R.raw.button_click)
-            findNavController().navigate(R.id.action_mainMenuFragment_to_parentPinFragment) // Ensure this action exists
+        binding?.apply {
+            progressBar.isVisible = true
+            tvUserName.isVisible = false
+            cardViewPlay.setOnClickListener {
+                audioManager.playSoundEffect(R.raw.button_click)
+                navigationHelper.navigateToGameModeSelection(findNavController())
+            }
+            cardViewSettings.setOnClickListener {
+                audioManager.playSoundEffect(R.raw.button_click)
+                navigationHelper.navigateToSettings(findNavController())
+            }
+            cardViewParentZone.setOnClickListener {
+                audioManager.playSoundEffect(R.raw.button_click)
+                navigationHelper.navigateToParentPin(findNavController())
+            }
         }
     }
 
     private fun observeViewModel() {
         viewModel.currentUser.observe(viewLifecycleOwner) { user ->
-            binding.progressBar.isVisible = false // Hide loading
-            binding.tvUserName.isVisible = true // Show text view
-            if (user != null) {
-                binding.tvUserName.text = getString(R.string.hello_user, user.name) // Ensure R.string.hello_user exists ("Merhaba, %1$s!")
-                Log.d("MainMenuFragment", "Current user loaded: ${user.name}")
-            } else {
-                // Handle case where no user is selected
-                binding.tvUserName.text = getString(R.string.hello_guest) // Ensure R.string.hello_guest exists ("Merhaba Misafir!")
-                // Optionally disable play button or navigate to user selection
-                Log.d("MainMenuFragment", "No current user selected.")
+            binding?.apply {
+                progressBar.isVisible = false
+                tvUserName.isVisible = true
+                if (user != null) {
+                    tvUserName.text = getString(R.string.hello_user, user.name)
+                } else {
+                    tvUserName.text = getString(R.string.hello_guest)
+                }
             }
         }
-        // Observe loading state if added to ViewModel
-        /*
-        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            binding.progressBar.isVisible = isLoading
-            binding.tvUserName.isVisible = !isLoading && viewModel.currentUser.value != null
-        }
-        */
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null // Prevent memory leaks
+        _binding = null
     }
 }

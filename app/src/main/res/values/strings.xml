@@ -2,7 +2,6 @@
 <resources>
     <!-- Uygulama Adı -->
     <string name="app_name">Şekil Öğreniyorum</string>
-
     <!-- Genel Kullanım -->
     <string name="back">Geri</string>
     <string name="next">İleri</string>
@@ -20,8 +19,6 @@
     <string name="error_generic">Bir hata oluştu.</string>
     <string name="score">Puan: %1$d</string>
     <string name="sortable_shape_desc">Sıralanabilir şekil ID %1$d</string>
-    <string name="hunt_scene_description">Şekil avı sahnesi</string>
-
     <!-- Dialog Butonları -->
     <string name="dialog_ok">Tamam</string>
     <string name="dialog_cancel">İptal</string>
@@ -29,14 +26,12 @@
     <string name="dialog_no">Hayır</string>
     <string name="dialog_replay">Tekrar Oyna</string>
     <string name="dialog_next_level">Sonraki Seviye</string>
-
     <!-- Ana Menü ve Kullanıcı -->
     <string name="hello_user">Merhaba, %1$s!</string>
     <string name="hello_guest">Merhaba Misafir!</string>
     <string name="play">Oyna</string>
     <string name="settings">Ayarlar</string>
     <string name="parent_zone">Ebeveyn Bölümü</string>
-
     <!-- Ayarlar -->
     <string name="settings_title">Ayarlar</string>
     <string name="sound">Ses Efektleri</string>
@@ -48,7 +43,6 @@
     <string name="difficulty_hard">Zor</string>
     <string name="settings_saved">Ayarlar kaydedildi.</string>
     <string name="settings_save_error">Ayarlar kaydedilemedi.</string>
-
     <!-- Dil İsimleri -->
     <string name="language_turkish">Türkçe</string>
     <string name="language_english">English</string>
@@ -58,7 +52,6 @@
     <string name="language_arabic">العربية</string>
     <string name="language_russian">Русский</string>
 
-    <!-- Oyun Modları -->
     <string name="game_modes">Oyun Modları</string>
     <string name="game_mode_discovery_title">Keşfet</string>
     <string name="game_mode_discovery_description">Şekilleri tanı ve özelliklerini öğren.</string>
@@ -70,7 +63,6 @@
     <string name="game_mode_sorting_description">Şekilleri renklerine veya türlerine göre ayır.</string>
     <string name="game_mode_puzzle_title">Yapboz</string>
     <string name="game_mode_puzzle_description">Şekilleri doğru yerlerine yerleştirerek yapbozu tamamla.</string>
-    <string name="game_mode_hunt_title">Şekil Avı</string>
     <string name="game_mode_hunt_description">Resimdeki gizlenmiş şekilleri bul.</string>
 
     <!-- Seviye Seçimi -->
@@ -79,7 +71,6 @@
     <string name="locked">Kilitli</string>
     <string name="level_locked">Seviye Kilitli</string>
 
-    <!-- Şekil Keşfi (Discovery) -->
     <string name="shape_discovery">Şekil Keşfi</string>
     <string name="shape_image_description">Şekil görseli</string>
     <string name="play_shape_sound">Şeklin sesini çal</string>
@@ -90,7 +81,6 @@
     <string name="rotate_shape">Şekli Döndür</string>
     <string name="previous_shape">Önceki Şekil</string>
     <string name="next_shape">Sonraki Şekil</string>
-
     <!-- Şekil İzleme (Tracing) -->
     <string name="shape_tracing">Şekil Çizimi</string>
     <string name="trace_shape">Şekli İzle</string>
@@ -98,7 +88,6 @@
     <string name="tracing_too_short">Lütfen şeklin üzerinden çizin!</string>
     <string name="tracing_success_feedback">Başarılı! Doğruluk: %1$d%%</string>
     <string name="tracing_failure_feedback">Tekrar Dene! Doğruluk: %1$d%%</string>
-
     <!-- Şekil Eşleştirme (Matching) -->
     <string name="shape_matching">Şekil Eşleştirme</string>
     <string name="match_shapes">Şekilleri Eşleştir</string>
@@ -107,7 +96,6 @@
     <string name="card_description_prefix">Kart şekil ID</string>
     <string name="level_complete_title">Tebrikler!</string>
     <string name="level_complete_message">Seviye tamamlandı! Skorunuz: %1$d</string>
-
     <!-- Şekil Sıralama (Sorting) -->
     <string name="shape_sorting">Şekil Sıralama</string>
     <string name="sort_by_criteria">Şekilleri şuna göre sırala: %1$s</string>
@@ -177,6 +165,16 @@
     <string name="level_1">Seviye 1</string>
     <string name="level_2">Seviye 2</string>
     <string name="level_3">Seviye 3</string>
+
+    <string name="main_menu">Şekil Öğrenme Oyunu</string>
+    <string name="game_mode_selection">Oynamak İstediğin Oyun Modunu Seç</string>
+    <string name="level_selection">%1$s Seviye Seçimi</string>
+    <string name="puzzle_background_description">Yapboz arka planı</string>
+    <string name="check_puzzle">Yapbozu Kontrol Et</string>
+    <string name="check_sorting">Sıralamayı Kontrol Et</string>
+    <string name="hunt_scene_description">Şekil avı sahnesi</string>
+    <string name="shape_item_description">%1$s şekli</string>
+
 
 
 </resources>

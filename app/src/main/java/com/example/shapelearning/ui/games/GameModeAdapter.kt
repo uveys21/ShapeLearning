@@ -1,11 +1,9 @@
 package com.example.shapelearning.ui.games
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.example.shapelearning.R // Gerekli olabilir
 import com.example.shapelearning.databinding.ItemGameModeBinding // item_game_mode.xml için Binding
 
 // GameMode veri sınıfı (Bu sınıfın projenizde uygun bir yerde tanımlı olduğundan emin olun)

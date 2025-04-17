@@ -1,6 +1,5 @@
 package com.example.shapelearning.ui.settings
 
-import android.util.Log // Added
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +8,6 @@ import com.example.shapelearning.data.model.Difficulty // Correct enum
 import com.example.shapelearning.data.model.Language // Correct enum
 import com.example.shapelearning.data.model.Settings
 import com.example.shapelearning.data.preferences.SettingsPreferences
-import com.example.shapelearning.utils.Event // Added
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -34,6 +32,19 @@ class SettingsViewModel @Inject constructor(
     private val _error = MutableLiveData<String?>()
     val error: LiveData<String?> = _error
 
+    // Selected language
+    private val _selectedLanguage = MutableLiveData<Language>()
+    val selectedLanguage: LiveData<Language> = _selectedLanguage
+
+    // Selected difficulty
+    private val _selectedDifficulty = MutableLiveData<Difficulty>()
+    val selectedDifficulty: LiveData<Difficulty> = _selectedDifficulty
+
+
+    // Handles user-initiated actions
+    fun userAction(action: () -> Unit) {
+        action()
+    }
 
     // Data class'a language enum'ını ekle
     data class SaveResult(
@@ -49,11 +60,11 @@ class SettingsViewModel @Inject constructor(
                 val loadedSettings = settingsPreferences.getSettings()
                 initialSettings = loadedSettings // Store initial state
                 _settingsState.value = loadedSettings // Update editable state
-                Log.d("SettingsViewModel", "Settings loaded: $loadedSettings")
+                _selectedLanguage.value = loadedSettings.language
+                _selectedDifficulty.value = loadedSettings.difficulty
             } catch (e: Exception) {
-                Log.e("SettingsViewModel", "Error loading settings", e)
                 _error.postValue("Failed to load settings.")
-                // Set default state if loading fails?
+                // Consider setting a default state if loading fails
                 val defaultSettings = Settings()
                 initialSettings = defaultSettings
                 _settingsState.value = defaultSettings
@@ -65,7 +76,6 @@ class SettingsViewModel @Inject constructor(
         _settingsState.value?.let { currentState ->
             if (currentState.soundEnabled != enabled) {
                 _settingsState.value = currentState.copy(soundEnabled = enabled)
-                Log.d("SettingsViewModel", "Sound enabled set to: $enabled")
             }
         }
     }
@@ -74,36 +84,15 @@ class SettingsViewModel @Inject constructor(
         _settingsState.value?.let { currentState ->
             if (currentState.musicEnabled != enabled) {
                 _settingsState.value = currentState.copy(musicEnabled = enabled)
-                Log.d("SettingsViewModel", "Music enabled set to: $enabled")
             }
         }
     }
 
-    fun setLanguage(language: Language) {
-        _settingsState.value?.let { currentState ->
-            if (currentState.language != language) {
-                _settingsState.value = currentState.copy(language = language)
-                Log.d("SettingsViewModel", "Language set to: ${language.name}")
-            }
-        }
-    }
-
-    fun setDifficulty(difficulty: Difficulty) {
-        _settingsState.value?.let { currentState ->
-            if (currentState.difficulty != difficulty) {
-                _settingsState.value = currentState.copy(difficulty = difficulty)
-                Log.d("SettingsViewModel", "Difficulty set to: ${difficulty.name}")
-            }
-        }
-    }
-
-    // Optional: Functions for PIN and Play Time Limit if UI exists
     fun setParentPin(pin: String) {
         _settingsState.value?.let { currentState ->
             // Add validation if needed
             if (currentState.parentPin != pin) {
                 _settingsState.value = currentState.copy(parentPin = pin)
-                Log.d("SettingsViewModel", "PIN updated")
             }
         }
     }
@@ -112,7 +101,6 @@ class SettingsViewModel @Inject constructor(
             val validMinutes = minutes.coerceAtLeast(0)
             if (currentState.dailyPlayTimeLimit != validMinutes) {
                 _settingsState.value = currentState.copy(dailyPlayTimeLimit = validMinutes)
-                Log.d("SettingsViewModel", "Play time limit set to: $validMinutes")
             }
         }
     }

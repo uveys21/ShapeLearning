@@ -144,6 +144,13 @@ class AudioManager @Inject constructor(
         }
     }
 
+     /**
+      * Ortak ses efektini çal.
+      */
+     fun playSoundEffect(@RawRes soundResId: Int) {
+         playSound(soundResId) // Use the existing playSound with default values
+     }
+
     /**
      * Arka plan müziği çal. Mevcut müziği durdurur.
      */

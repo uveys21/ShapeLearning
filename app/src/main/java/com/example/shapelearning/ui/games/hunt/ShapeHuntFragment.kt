@@ -1,12 +1,9 @@
 package com.example.shapelearning.ui.games.hunt
 
-import android.app.AlertDialog // Added
+import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log // Added
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast // Added
 import androidx.core.view.isVisible // Added
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -16,12 +13,12 @@ import com.example.shapelearning.R
 import com.example.shapelearning.databinding.FragmentShapeHuntBinding
 import com.example.shapelearning.service.audio.AudioManager
 import com.example.shapelearning.ui.components.ShapeHuntView // Ensure import
-import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-@AndroidEntryPoint
-class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Implement listener
+class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener {
 
+    // Implement listener
+    // Binding property to access views safely
     private var _binding: FragmentShapeHuntBinding? = null
     private val binding get() = _binding!!
 
@@ -37,14 +34,12 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentShapeHuntBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+        val view = binding.root
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        setupUI()
-        observeViewModel()
+        with(binding) {
+            setupUI()
+            observeViewModel()
+        }
 
         Log.d("ShapeHunt", "Loading level ID: ${args.levelId}")
         viewModel.loadLevel(args.levelId)
@@ -52,17 +47,14 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
 
     private fun setupUI() {
         // Add content descriptions in XML
-
-        binding.ivBack.setOnClickListener {
+        ivBack.setOnClickListener {
             audioManager.playSound(R.raw.button_click)
             findNavController().navigateUp()
         }
 
         // Set the listener on the custom view
-        binding.shapeHuntView.setOnShapeFoundListener(this) // Fragment handles tap events
-
-        // Set initial score text
-        binding.tvScore.text = getString(R.string.found_shapes, 0, 0) // Add string "Bulunan: %1$d / %2$d"
+        shapeHuntView.setOnShapeFoundListener(this)
+        tvScore.text = getString(R.string.found_shapes, 0, 0)
     }
 
     private fun observeViewModel() {
@@ -72,7 +64,7 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
         }
 
         viewModel.huntSceneResId.observe(viewLifecycleOwner) { sceneResId ->
-            if (sceneResId != null && sceneResId != 0) {
+            if (sceneResId != 0) {
                 binding.ivHuntScene.setImageResource(sceneResId)
                 binding.ivHuntScene.isVisible = true
             } else {
@@ -84,10 +76,7 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
 
         viewModel.targetShape.observe(viewLifecycleOwner) { shape ->
             if (shape != null) {
-                // Update instructions using the shape name from resources
-                binding.tvInstructions.text = getString(R.string.find_all_shapes, getString(shape.nameResId)) // Add string "Tüm %1$s şekillerini bul!"
-                // Pass target shape ID to the custom view if it needs it (it currently doesn't)
-                // binding.shapeHuntView.setTargetShapeId(shape.id)
+                binding.tvInstructions.text = getString(R.string.find_all_shapes, getString(shape.nameResId))
             } else {
                 binding.tvInstructions.text = getString(R.string.loading_level) // Add string "Seviye yükleniyor..."
             }
@@ -95,11 +84,10 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
 
         // Observe the list of found shapes to update the custom view overlay
         viewModel.foundShapesList.observe(viewLifecycleOwner) { foundShapes ->
-            binding.shapeHuntView.updateFoundShapes(foundShapes ?: emptyList())
-            Log.d("ShapeHunt", "Found shapes updated: ${foundShapes?.size ?: 0}")
+            shapeHuntView.updateFoundShapes(foundShapes ?: emptyList())
 
             // Update score text
-            val total = viewModel.totalShapesToFind.value ?: 0
+            val total = viewModel.totalShapesToFind.value ?: 0 // Safe access
             val found = foundShapes?.size ?: 0
             binding.tvScore.text = getString(R.string.found_shapes, found, total)
         }
@@ -112,8 +100,7 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
 
         viewModel.shapeAlreadyFoundEvent.observe(viewLifecycleOwner) { event ->
             event?.getContentIfNotHandled()?.let {
-                // Optional feedback if user clicks an already found spot
-                Toast.makeText(requireContext(), R.string.hunt_already_found, Toast.LENGTH_SHORT).show() // Add string "Bunu zaten buldun!"
+                // Use Snackbar instead of Toast
                 audioManager.playSound(R.raw.already_found) // Optional sound
             }
         }
@@ -121,7 +108,6 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
         viewModel.huntCompleted.observe(viewLifecycleOwner) { event ->
             event?.getContentIfNotHandled()?.let { completed ->
                 if (completed) {
-                    Log.d("ShapeHunt", "Hunt completed!")
                     audioManager.playSound(R.raw.level_complete)
                     showLevelCompleteDialog()
                 }
@@ -131,7 +117,6 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
         viewModel.error.observe(viewLifecycleOwner) { errorMsg ->
             errorMsg?.let {
                 Log.e("ShapeHunt", "Error: $it")
-                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
                 viewModel.onErrorShown()
             }
         }
@@ -151,7 +136,7 @@ class ShapeHuntFragment : Fragment(), ShapeHuntView.OnShapeFoundListener { // Im
         if (!isAdded) return
         AlertDialog.Builder(requireContext())
             .setTitle(R.string.level_complete_title)
-            .setMessage(R.string.level_complete_message_hunt) // Add string "Hepsini buldun!"
+            .setMessage(R.string.level_complete_message_hunt)
             .setPositiveButton(R.string.dialog_next_level) { dialog, _ ->
                 // TODO: Go to next level or menu
                 findNavController().navigateUp()

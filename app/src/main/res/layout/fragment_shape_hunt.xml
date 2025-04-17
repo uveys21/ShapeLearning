@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_light"
-    android:padding="@dimen/padding_medium"
     tools:context=".ui.games.hunt.ShapeHuntFragment">
 
 
@@ -13,6 +12,7 @@
     android:id="@+id/ivBack"
     android:layout_width="@dimen/icon_size_medium"
     android:layout_height="@dimen/icon_size_medium"
+    android:layout_marginStart="@dimen/margin_medium"
     android:background="?attr/selectableItemBackgroundBorderless"
     android:contentDescription="@string/back"
     android:padding="@dimen/padding_small"
@@ -28,6 +28,7 @@
     android:layout_marginStart="@dimen/margin_medium"
     android:layout_marginEnd="@dimen/margin_medium"
     android:gravity="center"
+    android:contentDescription="@string/shape_hunt"
     android:text="@string/shape_hunt"
     android:textAppearance="@style/TextAppearance.ShapeLearning.Headline2"
     android:textColor="@color/primary_dark"
@@ -53,7 +54,7 @@
     android:id="@+id/tvInstructions"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/margin_medium"
+    android:layout_margin="@dimen/margin_medium"
     android:gravity="center"
     android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
     android:textColor="@color/text_primary"
@@ -68,7 +69,6 @@
     style="@style/Widget.ShapeLearning.CardView"
     android:layout_width="0dp"
     android:layout_height="0dp"
-    android:layout_marginTop="@dimen/margin_medium"
     android:layout_marginBottom="@dimen/margin_medium"
     app:cardElevation="4dp"
     app:layout_constraintBottom_toBottomOf="parent"

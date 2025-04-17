@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map // map import'u LiveData dönüşümleri için kalabilir
-import androidx.lifecycle.viewModelScope
+
 import com.example.shapelearning.data.model.Level
 import com.example.shapelearning.data.model.Shape
 import com.example.shapelearning.data.repository.LevelRepository

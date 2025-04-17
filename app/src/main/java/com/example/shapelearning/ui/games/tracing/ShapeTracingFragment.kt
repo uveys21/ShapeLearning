@@ -5,12 +5,10 @@ import android.util.Log // Added
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast // Added for feedback
-import androidx.core.view.isVisible // Added
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.shapelearning.R
 import com.example.shapelearning.databinding.FragmentShapeTracingBinding
 import com.example.shapelearning.service.audio.AudioManager
@@ -25,7 +23,6 @@ class ShapeTracingFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: ShapeTracingViewModel by viewModels()
-    private val args: ShapeTracingFragmentArgs by navArgs()
 
     @Inject
     lateinit var audioManager: AudioManager
@@ -45,8 +42,7 @@ class ShapeTracingFragment : Fragment() {
         setupUI()
         observeViewModel()
 
-        Log.d("ShapeTracing", "Loading level ID: ${args.levelId}")
-        viewModel.loadLevel(args.levelId)
+        viewModel.loadLevel(ShapeTracingFragmentArgs.fromBundle(requireArguments()).levelId)
     }
 
     private fun setupUI() {
@@ -66,13 +62,7 @@ class ShapeTracingFragment : Fragment() {
             audioManager.playSound(R.raw.button_click)
             checkTracing()
         }
-
-        // Optional: Listener for tracing completion on the view itself
-        /*
-        binding.tracingView.setOnTracingCompleteListener { path ->
-             viewModel.checkTracing(path)
-        }
-        */
+        // Add content descriptions to Buttons/ImageViews in XML
     }
 
     private fun observeViewModel() {
@@ -81,15 +71,14 @@ class ShapeTracingFragment : Fragment() {
             binding.contentGroup?.isVisible = !isLoading // Group content views
         }
 
-        viewModel.currentShape.observe(viewLifecycleOwner) { shape ->
-            if (shape != null) {
-                binding.tvShapeName.text = getString(shape.nameResId)
-                // Set the outline image behind the tracing view
-                binding.ivShapeOutline.setImageResource(shape.outlineImageResId)
-                // Pass outline resource or data to TracingView if needed for validation
-                binding.tracingView.setShapeOutlineData(shape.outlineImageResId) // Modify TracingView if needed
+        viewModel.currentShape.observe(viewLifecycleOwner) { currentShape ->
+            currentShape?.let { shape ->
+                binding.tvShapeName.text = getString(it.nameResId)
+                binding.ivShapeOutline.setImageResource(it.outlineImageResId)
+                binding.tracingView.setShapeOutlineData(it.outlineImageResId)
                 binding.tracingView.clearDrawing() // Clear previous drawing
                 binding.btnCheck.isEnabled = true // Enable check button
+
             } else {
                 binding.tvShapeName.text = ""
                 binding.ivShapeOutline.setImageDrawable(null)
@@ -98,24 +87,21 @@ class ShapeTracingFragment : Fragment() {
             }
         }
 
-        viewModel.tracingResult.observe(viewLifecycleOwner) { result ->
-            // result is now accuracy score (Float?)
-            if (result != null) {
-                handleTracingResult(result)
-                viewModel.onResultShown() // Notify VM result is handled
-            }
+        viewModel.tracingResult.observe(viewLifecycleOwner) { accuracy ->
+            accuracy?.let { handleTracingResult(it) }
+            viewModel.onResultShown()
         }
 
         viewModel.error.observe(viewLifecycleOwner) { errorMsg ->
             errorMsg?.let {
                 Log.e("ShapeTracing", "Error: $it")
-                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
+                Toast.makeText(context, it, Toast.LENGTH_LONG).show()
                 viewModel.onErrorShown()
             }
         }
 
         viewModel.progressSaved.observe(viewLifecycleOwner) { saved ->
-            if (saved) {
+            if (saved == true) {
                 Log.d("ShapeTracing", "Progress saved successfully.")
                 // Optionally navigate back or to next level after a delay
                 // findNavController().navigateUp()
@@ -125,46 +111,37 @@ class ShapeTracingFragment : Fragment() {
 
     private fun checkTracing() {
         val tracingPath = binding.tracingView.getTracingPath()
-        if (tracingPath.size < 5) { // Basic check: Don't check if path is too short
-            Toast.makeText(requireContext(), R.string.tracing_too_short, Toast.LENGTH_SHORT).show() // Add string resource
+        if (tracingPath.size < 5) {
+            Toast.makeText(context, R.string.tracing_too_short, Toast.LENGTH_SHORT).show()
             return
         }
-        binding.btnCheck.isEnabled = false // Disable check button while checking
+        binding.btnCheck.isEnabled = false
         viewModel.checkTracing(tracingPath)
     }
 
     private fun handleTracingResult(accuracy: Float) {
-        binding.btnCheck.isEnabled = true // Re-enable check button
-        val successThreshold = 0.7f // Example threshold
+        binding.btnCheck.isEnabled = true
+        val successThreshold = 0.7f
 
         if (accuracy >= successThreshold) {
-            audioManager.playSound(R.raw.success) // Ensure resource exists
+            audioManager.playSound(R.raw.success)
             showFeedback(true, accuracy)
-            viewModel.saveProgress(accuracy) // Pass accuracy to save correct stars
+            viewModel.saveProgress(accuracy)
         } else {
-            audioManager.playSound(R.raw.failure) // Ensure resource exists
+            audioManager.playSound(R.raw.failure)
             showFeedback(false, accuracy)
-            // Optionally clear the drawing automatically on failure after a delay
-            // binding.tracingView.postDelayed({ binding.tracingView.clearDrawing() }, 1000)
         }
     }
 
     private fun showFeedback(isSuccess: Boolean, accuracy: Float) {
-        // TODO: Implement better visual feedback (animations, score display)
         val percentage = (accuracy * 100).toInt()
         val message = if (isSuccess) {
-            getString(R.string.tracing_success_feedback, percentage) // e.g., "Başarılı! Doğruluk: %1$d%%"
+            getString(R.string.tracing_success_feedback, percentage)
         } else {
-            getString(R.string.tracing_failure_feedback, percentage) // e.g., "Tekrar Dene! Doğruluk: %1$d%%"
+            getString(R.string.tracing_failure_feedback, percentage)
         }
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
-
-        // Example: Change background or show an overlay
-        // binding.feedbackOverlay?.setBackgroundColor(if (isSuccess) Color.GREEN else Color.RED)
-        // binding.feedbackOverlay?.isVisible = true
-        // binding.feedbackOverlay?.postDelayed({ binding.feedbackOverlay?.isVisible = false }, 1500)
-    }
-
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

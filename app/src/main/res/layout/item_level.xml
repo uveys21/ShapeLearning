@@ -3,17 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/Widget.ShapeLearning.CardView"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_small"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?attr/selectableItemBackground">
+    android:foreground="?attr/selectableItemBackground"
+    android:minWidth="100dp"
+    android:minHeight="100dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/padding_small">
+
+        <ImageView
+            android:id="@+id/ivLevelIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/cd_level_icon"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_level_1" />
 
         <TextView
             android:id="@+id/tvLevelNumber"
@@ -21,64 +37,58 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.ShapeLearning.Headline2"
             android:textColor="@color/primary"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLevelIcon"
+            app:layout_constraintEnd_toEndOf="@+id/ivLevelIcon"
+            app:layout_constraintStart_toStartOf="@+id/ivLevelIcon"
+            app:layout_constraintTop_toTopOf="@+id/ivLevelIcon"
             tools:text="1" />
 
         <ImageView
-            android:id="@+id/ivLevelIcon"
-            android:layout_width="@dimen/icon_size_medium"
-            android:layout_height="@dimen/icon_size_medium"
-            android:contentDescription="@string/cd_level_icon"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:src="@drawable/ic_level_1" />
-
-        <ImageView
             android:id="@+id/ivLock"
-            android:layout_width="@dimen/icon_size_medium"
-            android:layout_height="@dimen/icon_size_medium"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:contentDescription="@string/level_locked"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLevelIcon"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/ivLevelIcon"
+            app:layout_constraintStart_toStartOf="@+id/ivLevelIcon"
+            app:layout_constraintTop_toTopOf="@+id/ivLevelIcon"
             tools:src="@drawable/ic_lock"
             tools:visibility="visible" />
 
         <LinearLayout
             android:id="@+id/layoutStars"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintEnd_toEndOf="@+id/ivLevelIcon"
+            app:layout_constraintStart_toStartOf="@+id/ivLevelIcon"
+            app:layout_constraintTop_toBottomOf="@+id/ivLevelIcon">
 
             <ImageView
                 android:id="@+id/ivStar1"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:contentDescription="@null"
                 tools:src="@drawable/ic_star" />
 
             <ImageView
                 android:id="@+id/ivStar2"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:contentDescription="@null"
                 tools:src="@drawable/ic_star" />
 
             <ImageView
                 android:id="@+id/ivStar3"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:contentDescription="@null"
                 tools:src="@drawable/ic_star_outline" />
         </LinearLayout>

@@ -2,12 +2,10 @@ package com.example.shapelearning.ui.games.discovery
 
 import android.os.Bundle
 import android.util.Log // Added
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import androidx.core.view.isVisible // Added
 import androidx.fragment.app.Fragment
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -30,13 +28,11 @@ class ShapeDiscoveryFragment : Fragment() {
     @Inject
     lateinit var audioManager: AudioManager
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentShapeDiscoveryBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding.apply {
+            contentGroup.isVisible = false
+        }.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

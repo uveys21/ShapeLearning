@@ -1,76 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Ana Renkler -->
-    <color name="primary">#4CAF50</color>
-    <color name="primary_dark">#388E3C</color>
-    <color name="primary_light">#C8E6C9</color>
-    <color name="accent">#FF9800</color>
+  <!-- Ana Renkler -->
+  <color name="primary">#4CAF50</color>
+  <color name="primary_dark">#388E3C</color>
+  <color name="primary_light">#C8E6C9</color>
+  <color name="accent">#FF9800</color>
 
-    <!-- Nötr Renkler -->
-    <color name="white">#FFFFFF</color>
-    <color name="light_gray">#F5F5F5</color>
-    <color name="medium_gray">#E0E0E0</color>
-    <color name="dark_gray">#757575</color>
-    <color name="black">#212121</color>
+  <!-- Nötr Renkler -->
+  <color name="white">#FFFFFF</color>
+  <color name="light_gray">#F5F5F5</color>
+  <color name="medium_gray">#E0E0E0</color>
+  <color name="dark_gray">#757575</color>
+  <color name="black">#212121</color>
 
-    <!-- Şekil Renkleri -->
-    <color name="shape_red">#F44336</color>
-    <color name="shape_blue">#2196F3</color>
-    <color name="shape_yellow">#FFEB3B</color>
-    <color name="shape_purple">#9C27B0</color>
-    <color name="shape_pink">#E91E63</color>
-    <color name="shape_cyan">#00BCD4</color>
-    <color name="shape_orange">#FF5722</color>
-    <color name="shape_green">#8BC34A</color>
+  <!-- Şekil Renkleri -->
+  <color name="shape_red">#F44336</color>
+  <color name="shape_blue">#2196F3</color>
+  <color name="shape_yellow">#FFEB3B</color>
+  <color name="shape_purple">#9C27B0</color>
+  <color name="shape_pink">#E91E63</color>
+  <color name="shape_cyan">#00BCD4</color>
+  <color name="shape_orange">#FF5722</color>
+  <color name="shape_green">#8BC34A</color>
 
-    <!-- Geri Bildirim Renkleri -->
-    <color name="success">#4CAF50</color>
-    <color name="error">#F44336</color>
-    <color name="warning">#FFC107</color>
-    <color name="info">#2196F3</color>
+  <!-- Geri Bildirim Renkleri -->
+  <color name="success">#4CAF50</color>
+  <color name="error">#F44336</color>
+  <color name="warning">#FFC107</color>
+  <color name="info">#2196F3</color>
 
-    <!-- Ödül Renkleri -->
-    <color name="gold">#FFD700</color>
-    <color name="silver">#C0C0C0</color>
-    <color name="bronze">#CD7F32</color>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="secondary">#FFC107</color>
-    <color name="secondary_dark">#FFA000</color>
+  <!-- Ödül Renkleri -->
+  <color name="gold">#FFD700</color>
+  <color name="silver">#C0C0C0</color>
+  <color name="bronze">#CD7F32</color>
+  <color name="purple_200">#FFBB86FC</color>
+  <color name="purple_500">#FF6200EE</color>
+  <color name="purple_700">#FF3700B3</color>
+  <color name="teal_200">#FF03DAC5</color>
+  <color name="teal_700">#FF018786</color>
+  <color name="secondary">#FFC107</color>
+  <color name="secondary_dark">#FFA000</color>
 
-    <color name="puzzle_slot_border">#CCCCCC</color>
-    <color name="selected_highlight">#4000BCD4</color>
-    <color name="tracing_pen_color">#FF00BCD4</color>
-    <color name="hunt_marker_success">#4CAF50</color>
-    <color name="background_light">#F5F5F5</color>
-    <color name="icon_tint_primary">#616161</color>
+  <color name="puzzle_slot_border">#CCCCCC</color>
+  <color name="selected_highlight">#4000BCD4</color>
+  <color name="tracing_pen_color">#FF00BCD4</color>
+  <color name="hunt_marker_success">#4CAF50</color>
+  <color name="background_light">#F5F5F5</color>
+  <color name="icon_tint_primary">#616161</color>
 
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="text_on_primary">#FFFFFF</color>
-        <!-- Arka Plan Renkleri (Örnek) -->
-    <color name="card_background">#FFFFFF</color>
-        <!-- Oyuna Özel Renkler -->
-    <color name="failure">#F44336</color>
+  <color name="text_primary">#212121</color>
+  <color name="text_secondary">#757575</color>
+  <color name="text_on_primary">#FFFFFF</color>
+  <!-- Arka Plan Renkleri (Örnek) -->
+  <color name="card_background">#FFFFFF</color>
+  <!-- Oyuna Özel Renkler -->
+  <color name="failure">#F44336</color>
 
-    <color name="card_back_color">#455A64</color>
-    <color name="card_back_stroke_color">#B0BEC5</color>
-    <color name="accent_light">#FFD54F</color>
+  <color name="card_back_color">#455A64</color>
+  <color name="card_back_stroke_color">#B0BEC5</color>
+  <color name="accent_light">#FFD54F</color>
 
-    <!-- ... diğer renkleriniz ... -->
-    <color name="accent_dark">#FFA000</color>
+  <!-- ... diğer renkleriniz ... -->
+  <color name="accent_dark">#FFA000</color>
 
-    <color name="border_color">#E0E0E0</color>
+  <color name="border_color">#E0E0E0</color>
 
-    <color name="failure_light">#E57373</color>
-    <color name="failure_dark">#D32F2F</color>
+  <color name="failure_light">#E57373</color>
+  <color name="failure_dark">#D32F2F</color>
 
-    <color name="error_color">#B00020</color>
+  <color name="error_color">#B00020</color>
 
-    <color name="app_background">#FAFAFA</color>
-
-
+  <color name="app_background">#FAFAFA</color>
 </resources>

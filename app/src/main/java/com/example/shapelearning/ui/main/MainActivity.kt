@@ -2,10 +2,8 @@ package com.example.shapelearning.ui.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-// import androidx.navigation.ui.setupActionBarWithNavController // Removed if no ActionBar
+import androidx.navigation.findNavController
 import com.example.shapelearning.R
-import com.example.shapelearning.data.preferences.SettingsPreferences
 import com.example.shapelearning.databinding.ActivityMainBinding
 import com.example.shapelearning.service.audio.AudioManager
 import com.example.shapelearning.utils.LocaleHelper // Added
@@ -15,8 +13,6 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    @Inject
-    lateinit var settingsPreferences: SettingsPreferences // Keep for audio settings
     @Inject
     lateinit var audioManager: AudioManager
     @Inject
@@ -30,21 +26,15 @@ class MainActivity : AppCompatActivity() {
         
         // UI Inflation ve diğer kurulumlar
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val view = binding.root
+        setContentView(view)
         setupNavigation()
         initAudio()
-        // Opsiyonel: Locale değişikliklerini gözlemleme
     }
     private fun setupNavigation() {
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        navController = navHostFragment.navController
-        // setupActionBarWithNavController(navController) // Only if using ActionBar
+        navController = findNavController(R.id.nav_host_fragment)
     }
     private fun initAudio() {
-        // Load sound/music enabled status from preferences
-        val soundEnabled = settingsPreferences.getSoundEnabled()
-        val musicEnabled = settingsPreferences.getMusicEnabled()
         audioManager.setSoundEnabled(soundEnabled)
         audioManager.setMusicEnabled(musicEnabled)
         // Start background music if enabled

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:padding="@dimen/padding_large">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="com.example.shapelearning.ui.settings.SettingsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/padding_large">
 
     <ImageView
         android:id="@+id/ivBack"
@@ -70,13 +76,14 @@
                         android:minHeight="@dimen/min_touch_target_size"
                         android:text="@string/sound"
                         android:textAppearance="@style/TextAppearance.ShapeLearning.Body1" />
-
+                    <!-- Two-way binding for soundEnabled -->
                     <Switch
                         android:id="@+id/switchMusic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:checked="true"
+                        android:checked="@{viewModel.musicEnabled}"
                         android:minHeight="@dimen/min_touch_target_size"
+                        tools:checked="true"
                         android:text="@string/music"
                         android:textAppearance="@style/TextAppearance.ShapeLearning.Body1" />
 
@@ -100,15 +107,18 @@
                         android:layout_height="wrap_content"
                         android:text="@string/language"
                         android:textAppearance="@style/TextAppearance.ShapeLearning.Body1"
-                        android:textStyle="bold" />
-
+                        android:textStyle="bold" />                    <!-- Update to use binding adapter -->
                     <Spinner
                         android:id="@+id/spinnerLanguage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:selectedLanguage="@{viewModel.selectedLanguage}"
+                        app:onLanguageSelected="@{(language) -> viewModel.userAction(() -> viewModel.selectedLanguage.setValue(language))}"
                         android:layout_marginTop="@dimen/margin_small"
                         android:minHeight="@dimen/min_touch_target_size" />
-
+                        app:selectedLanguage="@{viewModel.selectedLanguage}"
+                        app:onLanguageSelected="@{viewModel::setLanguage}" />
+                        tools:listitem="@layout/simple_spinner_dropdown_item" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -136,12 +146,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_small">
+                        app:selectedDifficulty="@{viewModel.selectedDifficulty}"
+                        app:onDifficultySelected="@{(difficulty) -> viewModel.userAction(() -> viewModel.selectedDifficulty.setValue(difficulty))}">
+                        tools:checkedButton="@id/radioDifficultyEasy"
 
                         <RadioButton
                             android:id="@+id/radioDifficultyEasy"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="true"
                             android:minHeight="@dimen/min_touch_target_size"
                             android:text="@string/difficulty_easy"
                             android:textAppearance="@style/TextAppearance.ShapeLearning.Body1" />
@@ -161,9 +173,9 @@
                             android:minHeight="@dimen/min_touch_target_size"
                             android:text="@string/difficulty_hard"
                             android:textAppearance="@style/TextAppearance.ShapeLearning.Body1" />
-
                     </RadioGroup>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <Button
@@ -171,10 +183,10 @@
                 style="@style/Widget.ShapeLearning.Button.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/save" />
 
         </LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

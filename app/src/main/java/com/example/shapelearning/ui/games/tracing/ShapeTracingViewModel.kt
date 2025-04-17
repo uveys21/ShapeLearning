@@ -1,6 +1,5 @@
 package com.example.shapelearning.ui.games.tracing
 
-import android.util.Log // Added
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,17 +12,14 @@ import com.example.shapelearning.data.repository.LevelRepository
 import com.example.shapelearning.data.repository.ShapeRepository
 import com.example.shapelearning.data.repository.UserProgressRepository
 import com.example.shapelearning.data.repository.UserRepository // Added for user score/level count
+import com.example.shapelearning.utils.log
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.catch // Added
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.firstOrNull // Added
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.math.max // Added
 
 @HiltViewModel
-class ShapeTracingViewModel @Inject constructor(
-    private val shapeRepository: ShapeRepository,
+class ShapeTracingViewModel @Inject constructor(    private val shapeRepository: ShapeRepository,
     private val levelRepository: LevelRepository,
     private val userProgressRepository: UserProgressRepository,
     private val userRepository: UserRepository, // Added
@@ -60,7 +56,7 @@ class ShapeTracingViewModel @Inject constructor(
         viewModelScope.launch {
             levelRepository.getLevelById(levelId)
                 .catch { e ->
-                    Log.e("ShapeTracingVM", "Error loading level $levelId", e)
+                    log("Error loading level $levelId: ${e.message}")
                     _error.postValue("Failed to load level.")
                     _isLoading.postValue(false)
                 }
@@ -70,12 +66,12 @@ class ShapeTracingViewModel @Inject constructor(
                         // Load the first shape for tracing (can be extended for multi-shape levels)
                         loadShape(level.shapes[0])
                     } else if (level != null) {
-                        Log.w("ShapeTracingVM", "Level $levelId has no shapes.")
+                        log("Level $levelId has no shapes.")
                         _error.postValue("Level has no shapes.")
                         _isLoading.postValue(false)
                     } else {
-                        Log.e("ShapeTracingVM", "Level $levelId not found.")
-                        _error.postValue("Level not found.")
+                        log("Level $levelId not found.")
+                        _error.postValue("Failed to load level data.")
                         _isLoading.postValue(false)
                     }
                 }
@@ -86,7 +82,7 @@ class ShapeTracingViewModel @Inject constructor(
         viewModelScope.launch {
             shapeRepository.getShapeById(shapeId)
                 .catch { e ->
-                    Log.e("ShapeTracingVM", "Error loading shape $shapeId", e)
+                    log( "Error loading shape $shapeId: ${e.message}")
                     _error.postValue("Failed to load shape.")
                     _currentShape.postValue(null) // Clear shape on error
                     _isLoading.postValue(false)
@@ -97,7 +93,7 @@ class ShapeTracingViewModel @Inject constructor(
                         // TODO: Load actual outline points for the shape
                         targetOutlinePath = getTargetOutlinePathForShape(shape)
                     } else {
-                        Log.e("ShapeTracingVM", "Shape $shapeId is null.")
+                        log( "Shape $shapeId is null.")
                         _error.postValue("Shape data is missing.")
                     }
                     _isLoading.value = false
@@ -107,7 +103,7 @@ class ShapeTracingViewModel @Inject constructor(
 
     // TODO: Implement this method to get actual outline points from Shape data or another source
     private fun getTargetOutlinePathForShape(shape: Shape): List<Pair<Float, Float>> {
-        Log.w("ShapeTracingVM", "getTargetOutlinePathForShape not implemented for ${shape.id}. Using dummy data.")
+        log("getTargetOutlinePathForShape not implemented for ${shape.id}. Using dummy data.")
         // Replace with actual logic based on shape.outlinePointsJson or similar
         return listOf(Pair(0.1f, 0.1f), Pair(0.9f, 0.1f), Pair(0.9f, 0.9f), Pair(0.1f, 0.9f), Pair(0.1f, 0.1f)) // Dummy square
     }
@@ -129,7 +125,7 @@ class ShapeTracingViewModel @Inject constructor(
         drawnPath: List<Pair<Float, Float>>,
         targetPath: List<Pair<Float, Float>>
     ): Float {
-        Log.w("ShapeTracingVM", "calculateTracingAccuracy using placeholder logic!")
+        log("calculateTracingAccuracy using placeholder logic!")
         // Very basic placeholder: Check distance of first/last points (BAD ALGORITHM)
         if (drawnPath.isEmpty() || targetPath.isEmpty()) return 0.0f
         val startDist = distance(drawnPath.first(), targetPath.first())
@@ -152,7 +148,7 @@ class ShapeTracingViewModel @Inject constructor(
         val shape = _currentShape.value
 
         if (userId == SettingsPreferences.NO_USER_ID || level == null || shape == null) {
-            Log.w("ShapeTracingVM", "Cannot save progress: Missing user, level, or shape data.")
+            log("Cannot save progress: Missing user, level, or shape data.")
             _error.value = "Could not save progress."
             return
         }
@@ -174,7 +170,7 @@ class ShapeTracingViewModel @Inject constructor(
 
                 val isFirstCompletion = existingProgress == null
 
-                val newCompletionCount = (existingProgress?.completionCount ?: 0) + 1
+                val newCompletionCount =  (existingProgress?.completionCount ?: 0) + 1
                 val highestScore = max(score, existingProgress?.score ?: 0)
                 val highestStars = max(stars, existingProgress?.stars ?: 0)
 
@@ -195,10 +191,9 @@ class ShapeTracingViewModel @Inject constructor(
                     userRepository.incrementCompletedLevelsCounter(userId)
                 }
                 _progressSaved.postValue(true) // Indicate success
-                Log.d("ShapeTracingVM", "Progress saved for level ${level.id}, user $userId. Score: $score, Stars: $stars")
-
+                log( "Progress saved for level ${level.id}, user $userId. Score: $score, Stars: $stars")
             } catch (e: Exception) {
-                Log.e("ShapeTracingVM", "Error saving progress for level ${level.id}, user $userId", e)
+                log("Error saving progress for level ${level.id}, user $userId: ${e.message}")
                 _error.postValue("Failed to save progress.")
                 _progressSaved.postValue(false)
             }

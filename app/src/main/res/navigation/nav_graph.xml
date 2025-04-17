@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/mainMenuFragment"
         android:name="com.example.shapelearning.ui.main.MainMenuFragment"
-        android:label="Ana Menü"
+        android:label="Şekil Öğrenme Oyunu"
         tools:layout="@layout/fragment_main_menu">
         <action
             android:id="@+id/action_mainMenuFragment_to_gameModeSelectionFragment"
@@ -36,7 +36,7 @@
     <fragment
         android:id="@+id/gameModeSelectionFragment"
         android:name="com.example.shapelearning.ui.games.GameModeSelectionFragment"
-        android:label="Oyun Modu Seçimi"
+        android:label="Oynamak İstediğin Oyun Modunu Seç"
         tools:layout="@layout/fragment_game_mode_selection">
         <action
             android:id="@+id/action_gameModeSelectionFragment_to_levelSelectionFragment"
@@ -50,7 +50,7 @@
     <fragment
         android:id="@+id/levelSelectionFragment"
         android:name="com.example.shapelearning.ui.games.LevelSelectionFragment"
-        android:label="Seviye Seçimi"
+        android:label="{selected_game_mode} Seviye Seçimi"
         tools:layout="@layout/fragment_level_selection">
         <argument
             android:name="gameModeId"
@@ -102,7 +102,7 @@
     <fragment
         android:id="@+id/shapeDiscoveryFragment"
         android:name="com.example.shapelearning.ui.games.discovery.ShapeDiscoveryFragment"
-        android:label="Şekil Keşfi"
+        android:label="@string/shape_discovery"
         tools:layout="@layout/fragment_shape_discovery">
         <argument
             android:name="levelId"
@@ -112,7 +112,7 @@
     <fragment
         android:id="@+id/shapeTracingFragment"
         android:name="com.example.shapelearning.ui.games.tracing.ShapeTracingFragment"
-        android:label="Şekil İzleme"
+        android:label="@string/shape_tracing"
         tools:layout="@layout/fragment_shape_tracing">
         <argument
             android:name="levelId"
@@ -122,7 +122,7 @@
     <fragment
         android:id="@+id/shapeMatchingFragment"
         android:name="com.example.shapelearning.ui.games.matching.ShapeMatchingFragment"
-        android:label="Şekil Eşleştirme"
+        android:label="@string/shape_matching"
         tools:layout="@layout/fragment_shape_matching">
         <argument
             android:name="levelId"
@@ -132,7 +132,7 @@
     <fragment
         android:id="@+id/shapeSortingFragment"
         android:name="com.example.shapelearning.ui.games.sorting.ShapeSortingFragment"
-        android:label="Şekil Sıralama"
+        android:label="@string/shape_sorting"
         tools:layout="@layout/fragment_shape_sorting">
         <argument
             android:name="levelId"
@@ -142,7 +142,7 @@
     <fragment
         android:id="@+id/shapePuzzleFragment"
         android:name="com.example.shapelearning.ui.games.puzzle.ShapePuzzleFragment"
-        android:label="Şekil Yapboz"
+        android:label="@string/shape_puzzle"
         tools:layout="@layout/fragment_shape_puzzle">
         <argument
             android:name="levelId"
@@ -152,7 +152,7 @@
     <fragment
         android:id="@+id/shapeHuntFragment"
         android:name="com.example.shapelearning.ui.games.hunt.ShapeHuntFragment"
-        android:label="Şekil Avı"
+        android:label="@string/shape_hunt"
         tools:layout="@layout/fragment_shape_hunt">
         <argument
             android:name="levelId"
@@ -162,14 +162,14 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.shapelearning.ui.settings.SettingsFragment"
-        android:label="Ayarlar"
+        android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/parentPinFragment"
         android:name="com.example.shapelearning.ui.parent.ParentPinFragment"
-        android:label="Ebeveyn Bölümü"
-        tools:layout="@layout/fragment_parent_pin">
+        android:label="@string/parent_zone"
+        tools:layout="@layout/fragment_parent_pin" >
         <action
             android:id="@+id/action_parentPinFragment_to_parentZoneFragment"
             app:destination="@id/parentZoneFragment"
@@ -182,7 +182,7 @@
     <fragment
         android:id="@+id/parentZoneFragment"
         android:name="com.example.shapelearning.ui.parent.ParentZoneFragment"
-        android:label="Ebeveyn Bölümü"
+        android:label="@string/parent_zone"
         tools:layout="@layout/fragment_parent_zone" />
 
 </navigation>

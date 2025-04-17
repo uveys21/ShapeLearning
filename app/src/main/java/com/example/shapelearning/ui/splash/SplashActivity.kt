@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen // <<<--- IMPORT EKLEYİN
 import androidx.lifecycle.lifecycleScope
-// import com.example.shapelearning.R // setContentView kaldırıldığı için R importu gerekmeyebilir
 import com.example.shapelearning.ui.main.MainActivity
 import com.example.shapelearning.utils.LocaleHelper
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,14 +28,8 @@ class SplashActivity : AppCompatActivity() {
         // Locale'i burada ayarlamak hala mantıklı
         localeHelper.setLocale(this)
 
-        // --- setContentView'İ KALDIRIN VEYA YORUM SATIRI YAPIN ---
-        // setContentView(R.layout.activity_splash) // Tema zaten görseli sağlıyor
-
-        // Opsiyonel: Splash'ı bir koşula bağlı tutmak için (örn: veri yüklenene kadar)
-        // var isLoading = true // Durumu takip eden bir değişken
-        // splashScreen.setKeepOnScreenCondition { isLoading }
-        // // Yükleme bitince: isLoading = false
-
+        // setContentView'e gerek yok, tema splash'ı yönetiyor
+        
         // Coroutine ile gecikme ve navigasyon
         lifecycleScope.launch {
             // Gerekirse burada başlangıç işlemleri yapılabilir
@@ -50,8 +43,7 @@ class SplashActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        startActivity(intent)
-        // finish() // CLEAR_TASK nedeniyle gerekli değil
+      startActivity(intent)
     }
 
     companion object {

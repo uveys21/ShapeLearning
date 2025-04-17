@@ -1,22 +1,17 @@
 package com.example.shapelearning.ui.games.sorting
 
-import android.content.Context // Added for string resources
-import android.util.Log // Added
+import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.map // Added
+import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
-import com.example.shapelearning.R // Added
-import com.example.shapelearning.data.model.Level
-import com.example.shapelearning.data.model.Shape
-import com.example.shapelearning.data.model.UserProgress
+import com.example.shapelearning.R
+import com.example.shapelearning.data.model.*
 import com.example.shapelearning.data.preferences.SettingsPreferences
-import com.example.shapelearning.data.repository.LevelRepository
-import com.example.shapelearning.data.repository.ShapeRepository
-import com.example.shapelearning.data.repository.UserProgressRepository
-import com.example.shapelearning.data.repository.UserRepository // Added
-import com.example.shapelearning.utils.Event // Added (Use Event wrapper)
+import com.example.shapelearning.data.repository.*
+import com.example.shapelearning.utils.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext // Added
 import kotlinx.coroutines.Job // Added

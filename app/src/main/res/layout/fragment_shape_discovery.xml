@@ -44,7 +44,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_v_center"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-    app:layout_constraintBottom_toTopOf="@+id/bottomNavLayout"
     app:layout_constraintWidth_percent="0.4"
     app:layout_constraintHeight_percent="0.4">
 
@@ -160,7 +159,6 @@ android:layout_width="0dp"
 android:layout_height="0dp"
 android:layout_marginTop="@dimen/margin_medium"
 android:layout_marginStart="@dimen/margin_medium"
-app:layout_constraintBottom_toTopOf="@+id/bottomNavLayout"
 app:layout_constraintEnd_toEndOf="parent"
 app:layout_constraintStart_toEndOf="@+id/guideline_v_center"
 app:layout_constraintTop_toBottomOf="@+id/cardViewInfo">
@@ -198,48 +196,58 @@ app:layout_constraintTop_toBottomOf="@+id/cardViewInfo">
 </androidx.cardview.widget.CardView>
 
 
-    <!-- Navigasyon Butonları -->
-    <LinearLayout
-    android:id="@+id/bottomNavLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/margin_medium"
-    android:gravity="center"
-    android:orientation="horizontal"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomNavLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewShape">
 
-    <ImageButton
-    android:id="@+id/btnPrevious"
-    android:layout_width="@dimen/icon_size_large"
-    android:layout_height="@dimen/icon_size_large"
-    android:background="?attr/selectableItemBackgroundBorderless"
-    android:contentDescription="@string/previous_shape"
-    android:padding="@dimen/padding_small"
-    android:src="@drawable/ic_previous" />
+        <ImageButton
+            android:id="@+id/btnPrevious"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/previous_shape"
+            android:padding="@dimen/padding_small"
+            android:src="@drawable/ic_previous"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnRotate"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-    android:id="@+id/btnRotate"
-    android:layout_width="@dimen/icon_size_large"
-    android:layout_height="@dimen/icon_size_large"
-    android:layout_marginStart="@dimen/margin_large"
-    android:layout_marginEnd="@dimen/margin_large"
-    android:background="?attr/selectableItemBackgroundBorderless"
-    android:padding="@dimen/padding_small"
-    android:contentDescription="@string/rotate_shape"
-    android:src="@drawable/ic_rotate"/>
+        <ImageButton
+            android:id="@+id/btnRotate"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/rotate_shape"
+            android:padding="@dimen/padding_small"
+            android:src="@drawable/ic_rotate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnNext"
+            app:layout_constraintStart_toEndOf="@+id/btnPrevious"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-    android:id="@+id/btnNext"
-    android:layout_width="@dimen/icon_size_large"
-    android:layout_height="@dimen/icon_size_large"
-    android:background="?attr/selectableItemBackgroundBorderless"
-    android:contentDescription="@string/next_shape"
-    android:padding="@dimen/padding_small"
-    android:src="@drawable/ic_next" />
-
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/next_shape"
+            android:padding="@dimen/padding_small"
+            android:src="@drawable/ic_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnRotate"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- YÜKLEME GÖSTERGESİ -->
     <ProgressBar
@@ -261,7 +269,6 @@ app:layout_constraintTop_toBottomOf="@+id/cardViewInfo">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:visibility="visible"
-    app:constraint_referenced_ids="ivBack, tvTitle, cardViewShape, cardViewInfo, cardViewRealLife, bottomNavLayout, guideline_v_center" />
-    <!-- ÖNEMLİ: Buradaki ID listesine ProgressBar HARİÇ layout'taki tüm ana bileşenlerin ve guideline'ların ID'lerini ekleyin -->
+    app:constraint_referenced_ids="ivBack, tvTitle, cardViewShape, cardViewInfo, cardViewRealLife, guideline_v_center, bottomNavLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

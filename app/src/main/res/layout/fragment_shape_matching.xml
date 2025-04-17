@@ -5,7 +5,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_light"
-        android:padding="@dimen/padding_medium"
         tools:context=".ui.games.matching.ShapeMatchingFragment">
 
     <ImageView
@@ -27,6 +26,7 @@
         android:layout_marginStart="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_small"
         android:gravity="center"
+        android:contentDescription="@string/shape_matching"
         android:text="@string/shape_matching"
         android:textAppearance="@style/TextAppearance.ShapeLearning.Headline2"
         android:textColor="@color/primary_dark"
@@ -53,7 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_small"
         android:clipToPadding="false"
         android:paddingHorizontal="@dimen/padding_small"
         android:paddingVertical="@dimen/padding_medium"
@@ -80,18 +80,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible"/>
-
-        <!-- İçerik Grubu (Opsiyonel ama kullanışlı) -->
-        <!-- Eğer yükleme sırasında sadece RecyclerView'ı gizlemek isterseniz buna gerek yok -->
-        <!-- Eğer üst barı da gizlemek isterseniz Group kullanın -->
-        <!--
-         <androidx.constraintlayout.widget.Group
-            android:id="@+id/contentGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            app:constraint_referenced_ids="ivBack, tvTitle, tvScore, rvShapes" />
-        -->
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

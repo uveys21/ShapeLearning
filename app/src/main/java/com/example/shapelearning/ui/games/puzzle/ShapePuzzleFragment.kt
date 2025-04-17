@@ -1,27 +1,26 @@
-package com.example.shapelearning.ui.games.puzzle // <<<--- Doğru paketi kontrol edin
+package com.example.shapelearning.ui.games.puzzle
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels // Eğer ViewModel kullanıyorsanız
-import com.example.shapelearning.databinding.FragmentShapePuzzleBinding // <<<--- Doğru layout dosyasını kontrol edin
+import com.example.shapelearning.databinding.FragmentShapePuzzleBinding
 
-class ShapePuzzleFragment : Fragment() { // <<<--- Doğru sınıf adı ve miras
+class ShapePuzzleFragment : Fragment() {
 
     private var _binding: FragmentShapePuzzleBinding? = null
-    // Bu özellik yalnızca onCreateView ve onDestroyView arasında geçerlidir.
-    private val binding get() = _binding!!
-
-    // Eğer ViewModel kullanıyorsanız:
-    // private val viewModel: ShapePuzzleViewModel by viewModels()
+    private val binding get() = _binding!! // This property is only valid between onCreateView and onDestroyView.
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentShapePuzzleBinding.inflate(inflater, container, false)
+        _binding = FragmentShapePuzzleBinding.inflate(inflater, container, false).apply {
+            // Example: Set click listeners or initial UI states here if needed.
+            // For instance:
+            // someButton.setOnClickListener { ... }
+        }
         return binding.root
     }
 
@@ -29,16 +28,11 @@ class ShapePuzzleFragment : Fragment() { // <<<--- Doğru sınıf adı ve miras
         super.onViewCreated(view, savedInstanceState)
 
         // TODO: Buraya ShapePuzzleFragment'a özel kodlarınızı ekleyin
-        // Örneğin:
-        // - ViewModel'ı observe etme
-        // - RecyclerView (varsa) ve Adapter'ı (ShapePuzzleAdapter?) ayarlama
-        // - Tıklama dinleyicilerini ayarlama
-        // - Puzzle mantığını başlatma
-
+        // Example: Setup your RecyclerView, observers, or other logic here.
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null // Bellek sızıntılarını önlemek için binding'i temizle
+        _binding = null
     }
 }

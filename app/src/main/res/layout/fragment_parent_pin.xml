@@ -14,15 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/enter_pin"
-        android:textAppearance="@style/TextAppearance.ShapeLearning.Headline6"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        app:layout_constraintBottom_toTopOf="@+id/etPin"/>
-    <!-- EditText'in üstüne konumlandırıldı -->
+        app:layout_constraintBottom_toTopOf="@+id/etPin"
+        app:layout_constraintVertical_chainStyle="packed" />
 
-    <!-- PIN Giriş EditText'i -->
     <EditText
         android:id="@+id/etPin"
         android:layout_width="0dp"
@@ -31,35 +29,19 @@
         android:inputType="numberPassword"
         android:maxLength="4"
         android:textAlignment="center"
-        android:minHeight="48dp"
-        app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintTop_toBottomOf="@id/tvPinTitle"
+        android:importantForAutofill="no"
+        app:layout_constraintTop_toBottomOf="@+id/tvPinTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:importantForAutofill="no"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_marginTop="16dp" />
 
-    <!-- Gönder/Onayla Butonu (Genellikle PIN girişinden sonra gerekir) -->
     <Button
         android:id="@+id/btnConfirmPin"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/dialog_ok"
-        app:layout_constraintTop_toBottomOf="@id/etPin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/margin_large"/>
-
-    <!-- Ortadaki geçici TextView kaldırılabilir veya amaca uygun hale getirilebilir -->
-    <!--
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Parent Pin Fragment Layout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-     -->
+        android:contentDescription="@string/dialog_ok" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

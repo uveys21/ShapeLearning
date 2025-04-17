@@ -18,7 +18,6 @@
         <ImageView
             android:id="@+id/ivGameModeIcon"
             android:layout_width="@dimen/icon_size_large"
-            android:layout_height="@dimen/icon_size_large"
             android:contentDescription="@string/cd_game_mode_list"
             android:minWidth="48dp"
             android:minHeight="48dp"
@@ -26,6 +25,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/ic_game_discovery" />
         <TextView
+            android:layout_height="wrap_content"
             android:id="@+id/tvGameModeTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
